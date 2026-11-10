@@ -4,194 +4,320 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Los Avellanos · Panadería y Pastelería en Puente Alto</title>
-<meta name="description" content="Panadería y pastelería Los Avellanos, Av. Paseo Pie Andino 01848, Puente Alto. Tortas personalizadas con precios por sabor y tamaño, pan, rolls, berlines y empanadas. Cotiza tu torta por WhatsApp.">
+<meta name="description" content="Panadería y pastelería Los Avellanos, Av. Paseo Pie Andino 01848, Puente Alto. Tortas personalizadas con precios por sabor y tamaño, tartaletas, cheesecake, pan, rolls, berlines y empanadas. Cotiza tu torta por WhatsApp.">
 <meta property="og:title" content="Los Avellanos · Panadería y Pastelería">
 <meta property="og:description" content="Tortas personalizadas, pan y pastelería en Puente Alto. Cotiza tu torta por WhatsApp.">
 <meta property="og:image" content="https://delaguardaagustin.github.io/pasteleria-los-avellanos/assets/fachada.jpg">
 <link rel="icon" href="assets/logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{--cafe:#5c3d31;--cafe2:#3e2820;--rosa:#d6a4ad;--rosa2:#f4e6e8;--crema:#fdf8f4;--tinta:#2b1d17;--gris:#6f625c;--linea:#ead9d4;--wa:#1f9d55;--r:18px}
+:root{--cafe:#5c3d31;--cafe2:#3a241c;--rosa:#d9a3ad;--rosa-o:#b46b7a;--rosa2:#f6e7e9;--crema:#fcf6f0;--crema2:#f5ebe1;--tinta:#2b1d17;--gris:#6f625c;--linea:#ecdcd6;--wa:#1f9d55;--oro:#c9963b;--r:22px;
+/* variables que usa el asistente */
+--bg:#fffaf6;--surface:#f6e7e9;--text:#2b1d17;--muted:#7b6a63;--accent:#b46b7a;--line:#ecdcd6;--font:Inter,system-ui,sans-serif;--display:Fraunces,Georgia,serif;--asis-radius:20px;--asis-tone:#5c3d31}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%}
 a{color:inherit}
-h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.1;letter-spacing:-.01em}
-.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:15px;transition:transform .15s,background .15s}
-.btn:hover{transform:translateY(-1px)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.05;letter-spacing:-.015em;font-weight:700}
+.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
+.mano{font-family:Caveat,cursive;font-weight:600;color:var(--rosa-o);font-size:26px;line-height:1}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:0;cursor:pointer;font-size:15px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(58,36,28,.5)}
 .btn-wa{background:var(--wa);color:#fff}
-.btn-cl{background:#fff;color:var(--cafe2)}
-.btn-ln{background:transparent;color:var(--cafe);box-shadow:inset 0 0 0 1.5px var(--cafe)}
+.btn-cafe{background:var(--cafe2);color:#fff}
+.btn-ln{background:transparent;color:var(--cafe2);box-shadow:inset 0 0 0 1.5px var(--cafe2)}
 .btn svg{width:18px;height:18px;fill:currentColor}
 /* barra */
-.top{position:sticky;top:0;z-index:20;background:rgba(253,248,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--linea)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.top{position:sticky;top:0;z-index:40;background:rgba(252,246,240,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
 .marca{display:flex;align-items:center;gap:10px;text-decoration:none}
-.marca img{width:40px;height:40px;border-radius:50%;object-fit:cover;border:1px solid var(--linea)}
-.marca b{font-family:Fraunces,serif;font-size:19px;color:var(--cafe2)}
-.marca small{display:block;font-size:11px;color:var(--gris);letter-spacing:.06em;text-transform:uppercase}
-.nav{display:flex;gap:22px;font-size:14px;font-weight:500}
-.nav a{text-decoration:none;color:var(--cafe)}
-.top .btn{padding:9px 16px;font-size:14px}
-@media(max-width:820px){.nav{display:none}}
+.marca img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid var(--linea);background:#fff}
+.marca b{font-family:Fraunces,serif;font-size:20px;color:var(--cafe2);display:block;line-height:1.1}
+.marca small{font-size:11px;color:var(--gris);letter-spacing:.08em;text-transform:uppercase}
+.nav{display:flex;gap:24px;font-size:14px;font-weight:500}
+.nav a{text-decoration:none;color:var(--cafe);position:relative}
+.nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:2px;background:var(--rosa-o);transition:right .25s}
+.nav a:hover:after{right:0}
+.top .btn{padding:10px 16px;font-size:14px}
+@media(max-width:900px){.nav{display:none}}
 /* portada */
-.hero{position:relative;min-height:min(88vh,720px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 55%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,29,23,.9) 0%,rgba(43,29,23,.72) 38%,rgba(43,29,23,.2) 70%,rgba(43,29,23,.05) 100%),linear-gradient(180deg,rgba(43,29,23,0) 55%,rgba(43,29,23,.6) 100%)}
-@media(max-width:720px){.hero:after{background:linear-gradient(180deg,rgba(43,29,23,.35) 0%,rgba(43,29,23,.78) 45%,rgba(43,29,23,.93) 100%)}}
-.hero .wrap{position:relative;z-index:1;padding:120px 0 56px}
-.ojo{display:inline-block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--rosa)}
-.hero h1{font-size:clamp(38px,6.4vw,72px);margin:10px 0 14px;max-width:14ch}
-.hero h1 em{font-style:italic;color:var(--rosa)}
-.hero p{font-size:18px;max-width:52ch;opacity:.95}
-.acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.sellos{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.sellos span{font-size:13px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28)}
+.hero{position:relative;padding:56px 0 70px;overflow:hidden}
+.hero:before{content:"";position:absolute;width:720px;height:720px;right:-220px;top:-260px;border-radius:50%;background:radial-gradient(circle,var(--rosa2) 0,rgba(246,231,233,0) 68%);z-index:0}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:34px}.hero{padding-top:28px}}
+.ojo{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--rosa-o)}
+.ojo:before{content:"";width:26px;height:1.5px;background:currentColor}
+.hero h1{font-size:clamp(44px,6.6vw,84px);color:var(--cafe2);margin:16px 0 18px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--rosa-o)}
+.hero .lead{font-size:18px;color:var(--gris);max-width:46ch}
+.acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.datos-h{display:flex;flex-wrap:wrap;gap:22px;margin-top:32px;padding-top:22px;border-top:1px dashed var(--linea)}
+.datos-h div{font-size:13px;color:var(--gris)}
+.datos-h b{display:block;font-family:Fraunces,serif;font-size:26px;color:var(--cafe2);line-height:1.1}
+.collage{position:relative;aspect-ratio:1/1.02}
+.collage .f{position:absolute;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(58,36,28,.55);background:#fff}
+.collage .f img,.collage .f video{width:100%;height:100%;object-fit:cover}
+.c1{inset:0 16% 18% 0}
+.c2{width:42%;aspect-ratio:3/4;right:0;bottom:0;transform:rotate(4deg);border:6px solid #fff}
+.c3{width:34%;aspect-ratio:1/1;left:-4%;bottom:-2%;transform:rotate(-6deg);border:6px solid #fff}
+.sello{position:absolute;right:6%;top:-4%;width:132px;height:132px;border-radius:50%;background:var(--cafe2);color:#fff;display:grid;place-items:center;text-align:center;z-index:3;box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+.sello svg{position:absolute;inset:0;width:100%;height:100%;animation:gira 22s linear infinite}
+.sello svg text{fill:var(--rosa);font-size:10.5px;letter-spacing:2.6px;font-family:Inter,sans-serif;font-weight:600;text-transform:uppercase}
+.sello b{font-family:Fraunces,serif;font-size:24px;line-height:1}
+.sello small{font-size:10px;opacity:.8;display:block}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media(max-width:560px){.sello{width:104px;height:104px}.sello b{font-size:19px}}
+/* cinta */
+.cinta{background:var(--cafe2);color:var(--crema);overflow:hidden;white-space:nowrap;padding:16px 0;transform:rotate(-1.2deg);margin:10px -10px 0;position:relative;z-index:2}
+.cinta .mov{display:inline-flex;gap:34px;animation:corre 38s linear infinite;font-family:Fraunces,serif;font-size:22px;font-style:italic}
+.cinta span:after{content:"✦";margin-left:34px;color:var(--rosa);font-style:normal;font-size:14px;vertical-align:middle}
+@keyframes corre{to{transform:translateX(-50%)}}
 /* secciones */
-section{padding:84px 0}
-.cab{max-width:640px;margin-bottom:34px}
-.cab h2{font-size:clamp(30px,4.2vw,46px);color:var(--cafe2);margin:8px 0 12px}
-.cab h2 em{color:#b0707d;font-style:italic}
+section{padding:96px 0;position:relative}
+.cab{max-width:680px;margin-bottom:40px}
+.cab h2{font-size:clamp(34px,4.6vw,56px);color:var(--cafe2);margin:12px 0 14px}
+.cab h2 em{color:var(--rosa-o);font-style:italic;font-weight:500}
 .cab p{color:var(--gris);font-size:17px}
-.ojo2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#b0707d}
-/* carrusel */
-.carr{position:relative}
-.pista{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(230px,27%);gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
-.pista::-webkit-scrollbar{display:none}
-@media(max-width:720px){.pista{grid-auto-columns:72%}}
-.item{scroll-snap-align:start;border-radius:var(--r);overflow:hidden;background:#fff;border:1px solid var(--linea);position:relative}
-.item img,.item video{width:100%;aspect-ratio:9/13;object-fit:cover}
-.item figcaption{padding:12px 14px;font-size:14px;color:var(--gris)}
-.item figcaption b{display:block;color:var(--cafe2);font-size:15px}
-.etq{position:absolute;top:10px;left:10px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.92);color:var(--cafe2)}
-.flechas{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
-.flechas button{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--cafe);background:transparent;color:var(--cafe);font-size:18px;cursor:pointer}
-.flechas button:hover{background:var(--cafe);color:#fff}
+.cab.centro{margin-inline:auto;text-align:center}
+.cab.centro .ojo:after{content:"";width:26px;height:1.5px;background:currentColor}
+/* reels */
+.reels{background:linear-gradient(180deg,var(--crema) 0,var(--rosa2) 100%)}
+.tira{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(210px,1fr);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 18px;scrollbar-width:none}
+.tira::-webkit-scrollbar{display:none}
+@media(max-width:720px){.tira{grid-auto-columns:62%}}
+.reel{scroll-snap-align:start;position:relative;border-radius:28px;overflow:hidden;aspect-ratio:9/16;background:#000;box-shadow:0 22px 40px -24px rgba(58,36,28,.6);border:5px solid #fff}
+.reel video{width:100%;height:100%;object-fit:cover}
+.reel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.65))}
+.reel figcaption{position:absolute;left:16px;right:16px;bottom:14px;color:#fff;z-index:1;font-weight:600;font-size:15px;line-height:1.3}
+.reel figcaption small{display:block;font-weight:400;opacity:.85;font-size:12.5px}
+.reel .vivo{position:absolute;top:12px;left:12px;z-index:1;font-size:11px;font-weight:600;padding:4px 9px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--cafe2)}
+/* bento tortas */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:14px}
+.bento figure{position:relative;border-radius:var(--r);overflow:hidden;cursor:zoom-in;background:#eee}
+.bento img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.bento figure:hover img{transform:scale(1.05)}
+.bento figcaption{position:absolute;left:10px;bottom:10px;background:rgba(255,250,246,.94);color:var(--cafe2);font-size:13px;font-weight:600;padding:6px 11px;border-radius:999px}
+.g-a{grid-column:span 2;grid-row:span 2}.g-b{grid-row:span 2}
+@media(max-width:860px){.bento{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}.g-a{grid-column:span 2}}
+.temas{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.temas span{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--linea);font-size:14px;color:var(--cafe)}
 /* cotizador */
-.cot{background:var(--rosa2)}
-.cot-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:start}
-@media(max-width:860px){.cot-grid{grid-template-columns:1fr}}
-.panel{background:#fff;border-radius:22px;padding:26px;border:1px solid var(--linea)}
-.campo{margin-bottom:20px}
-.campo label,.campo legend{display:block;font-weight:600;font-size:14px;margin-bottom:8px;color:var(--cafe2)}
-select{width:100%;padding:13px 14px;border-radius:12px;border:1.5px solid var(--linea);font:inherit;background:#fff;color:var(--tinta)}
-.tam{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-@media(max-width:480px){.tam{grid-template-columns:repeat(3,1fr)}}
-.tam button{padding:10px 4px;border-radius:12px;border:1.5px solid var(--linea);background:#fff;font:inherit;font-size:14px;cursor:pointer;color:var(--tinta)}
-.tam button[aria-pressed=true]{background:var(--cafe);color:#fff;border-color:var(--cafe)}
-.tam button:disabled{opacity:.35;cursor:not-allowed}
-.nota{font-size:13px;color:var(--gris);margin-top:8px}
-fieldset{border:0}
-.extras{display:grid;gap:8px}
-.extras label{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1.5px solid var(--linea);border-radius:12px;font-weight:400;font-size:14px;cursor:pointer;margin:0}
-.extras label:has(input:checked){border-color:var(--cafe);background:var(--rosa2)}
-.extras input{accent-color:var(--cafe);width:18px;height:18px;flex:none}
+.cot{background:var(--cafe2);color:var(--crema)}
+.cot .cab h2{color:#fff}.cot .cab p{color:#d9c9c2}.cot .ojo{color:var(--rosa)}
+.cot-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+@media(max-width:900px){.cot-grid{grid-template-columns:1fr}}
+.panel{background:var(--crema);color:var(--tinta);border-radius:28px;padding:28px}
+.paso{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--cafe2);margin-bottom:12px}
+.paso i{width:28px;height:28px;border-radius:50%;background:var(--rosa-o);color:#fff;display:grid;place-items:center;font-style:normal;font-size:13px}
+.campo{margin-bottom:26px}
+.sabores{display:flex;flex-wrap:wrap;gap:8px}
+.sabores button,.tam button{padding:9px 14px;border-radius:999px;border:1.5px solid var(--linea);background:#fff;font:inherit;font-size:14px;cursor:pointer;color:var(--tinta);transition:all .15s}
+.sabores button:hover,.tam button:hover{border-color:var(--rosa-o)}
+.sabores button[aria-pressed=true],.tam button[aria-pressed=true]{background:var(--cafe2);color:#fff;border-color:var(--cafe2)}
+.tam{display:flex;flex-wrap:wrap;gap:8px}
+.tam button{min-width:64px}
+.tam button:disabled{opacity:.3;cursor:not-allowed}
+.nota{font-size:13px;color:var(--gris);margin-top:10px}
+.extras{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:560px){.extras{grid-template-columns:1fr}}
+.extras label{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1.5px solid var(--linea);border-radius:14px;font-size:13.5px;cursor:pointer;background:#fff;line-height:1.3}
+.extras label:has(input:checked){border-color:var(--rosa-o);background:var(--rosa2)}
+.extras input{accent-color:var(--cafe2);width:18px;height:18px;flex:none}
 .extras span{flex:1}
-.extras em{font-style:normal;color:var(--gris);font-size:13px;white-space:nowrap}
-.resumen{position:sticky;top:84px;background:var(--cafe2);color:#fff;border-radius:22px;padding:26px}
-.resumen h3{font-size:22px;margin-bottom:12px}
-.resumen ul{list-style:none;font-size:15px;opacity:.9;margin-bottom:16px}
-.resumen li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-.total{font-family:Fraunces,serif;font-size:42px;color:var(--rosa);margin:6px 0 4px}
-.resumen small{display:block;opacity:.75;font-size:13px;margin-bottom:18px}
-.resumen .btn{width:100%;justify-content:center}
-/* tabla */
-details.tabla{margin-top:28px;background:#fff;border:1px solid var(--linea);border-radius:18px}
-details.tabla summary{cursor:pointer;padding:18px 22px;font-weight:600;color:var(--cafe2);list-style:none}
-details.tabla summary:after{content:"+";float:right;font-size:20px;line-height:1}
+.extras em{font-style:normal;color:var(--rosa-o);font-weight:600;font-size:12.5px;white-space:nowrap}
+.pack{margin-top:12px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:16px;background:var(--rosa2);border:1.5px dashed var(--rosa-o);font-size:14px}
+.pack button{border:0;background:var(--rosa-o);color:#fff;border-radius:999px;padding:8px 14px;font:inherit;font-weight:600;font-size:13px;cursor:pointer}
+.ticket{position:sticky;top:90px;background:#fffaf6;color:var(--tinta);border-radius:22px;padding:28px 26px 26px;filter:drop-shadow(0 26px 40px rgba(0,0,0,.35))}
+.ticket:before,.ticket:after{content:"";position:absolute;left:0;right:0;height:14px;background:radial-gradient(circle at 7px 0,transparent 7px,#fffaf6 7.5px) 0 0/14px 14px repeat-x}
+.ticket:before{top:-13px;transform:rotate(180deg)}.ticket:after{bottom:-13px}
+.ticket h3{font-size:24px;color:var(--cafe2);display:flex;justify-content:space-between;align-items:baseline}
+.ticket h3 small{font-family:Caveat,cursive;font-size:22px;color:var(--rosa-o);font-weight:600}
+.ticket ul{list-style:none;font-size:14.5px;margin:16px 0;border-top:1.5px dashed var(--linea);padding-top:10px}
+.ticket li{display:flex;justify-content:space-between;gap:12px;padding:6px 0}
+.ticket li span:last-child{white-space:nowrap;font-weight:600}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1.5px dashed var(--linea);padding-top:14px}
+.total b{font-family:Fraunces,serif;font-size:40px;color:var(--cafe2)}
+.ticket small{display:block;color:var(--gris);font-size:12.5px;margin:6px 0 18px}
+.ticket .btn{width:100%;justify-content:center}
+details.tabla{margin-top:30px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;color:#fff}
+details.tabla summary{cursor:pointer;padding:18px 22px;font-weight:600;list-style:none}
+details.tabla summary:after{content:"+";float:right;font-size:22px;line-height:1}
 details.tabla[open] summary:after{content:"–"}
 .scroll{overflow-x:auto;padding:0 12px 16px}
-table{border-collapse:collapse;width:100%;min-width:760px;font-size:14px}
-th,td{padding:9px 10px;text-align:right;border-bottom:1px solid var(--linea);white-space:nowrap}
-th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:#fff;font-weight:600}
-thead th{background:var(--rosa);color:#fff;font-weight:600}
-thead th:first-child{background:var(--rosa)}
-/* panadería */
-.pan{background:#fff}
+table{border-collapse:collapse;width:100%;min-width:780px;font-size:14px}
+th,td{padding:10px;text-align:right;border-bottom:1px solid rgba(255,255,255,.1);white-space:nowrap}
+th:first-child,td:first-child{text-align:left;position:sticky;left:0;background:var(--cafe2);font-weight:600}
+thead th{color:var(--rosa);font-weight:600}
+tbody tr:hover td{background:rgba(255,255,255,.05)}
+/* vitrina */
+.tabs{display:inline-flex;background:#fff;border:1px solid var(--linea);border-radius:999px;padding:5px;margin-bottom:26px}
+.tabs button{border:0;background:transparent;padding:10px 20px;border-radius:999px;font:inherit;font-weight:600;color:var(--cafe);cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--cafe2);color:#fff}
+.vitrina{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+@media(max-width:900px){.vitrina{grid-template-columns:repeat(2,1fr)}}
+.prod{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--linea);transition:transform .25s,box-shadow .25s}
+.prod:hover{transform:translateY(-4px);box-shadow:0 22px 36px -24px rgba(58,36,28,.5)}
+.prod img{width:100%;aspect-ratio:4/5;object-fit:cover;cursor:zoom-in}
+.prod div{padding:14px 16px 16px}
+.prod b{font-family:Fraunces,serif;font-size:19px;color:var(--cafe2);display:block}
+.prod p{font-size:13.5px;color:var(--gris);margin-top:4px}
+[hidden]{display:none!important}
+/* equipo */
+.equipo{background:var(--crema2)}
+.eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:860px){.eq{grid-template-columns:1fr}}
+.eq-fotos{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.eq-fotos img,.eq-fotos video{border-radius:var(--r);width:100%;height:100%;object-fit:cover}
+.eq-fotos .alta{grid-row:span 2;aspect-ratio:9/16}
+.eq-fotos img{aspect-ratio:1/1}
+.cita{font-family:Fraunces,serif;font-style:italic;font-size:clamp(24px,2.6vw,32px);color:var(--cafe2);line-height:1.25;margin:16px 0}
+.lista-c{list-style:none;display:grid;gap:12px;margin-top:20px}
+.lista-c li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px}
+.lista-c li:before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:var(--rosa-o) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12l4 4 8-8' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E") center/14px no-repeat;margin-top:2px}
 /* opiniones */
-.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:820px){.ops{grid-template-columns:1fr}}
-.op{background:#fff;border:1px solid var(--linea);border-radius:18px;padding:22px}
-.op .est{color:#c9963b;letter-spacing:2px;font-size:15px}
-.op p{margin:10px 0 14px;font-size:16px}
-.op small{color:var(--gris)}
-.nota-g{display:flex;align-items:center;gap:14px;margin-bottom:26px}
-.nota-g b{font-family:Fraunces,serif;font-size:52px;color:var(--cafe2)}
+.ops{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.ops{grid-template-columns:1fr}}
+.op{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:26px;position:relative}
+.op:before{content:"“";position:absolute;right:20px;top:-8px;font-family:Fraunces,serif;font-size:96px;color:var(--rosa2);line-height:1}
+.op .est{color:var(--oro);letter-spacing:2px}
+.op p{margin:12px 0 16px;font-size:16.5px;position:relative}
+.op small{color:var(--gris);font-weight:600}
+.nota-g{display:inline-flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--linea);border-radius:999px;padding:8px 20px 8px 8px;margin-bottom:28px}
+.nota-g b{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--cafe2);color:#fff;font-family:Fraunces,serif;font-size:22px}
 /* visita */
-.vis{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-@media(max-width:820px){.vis{grid-template-columns:1fr}}
-.vis img{border-radius:22px;width:100%;height:100%;object-fit:cover;min-height:280px}
-.datos{background:#fff;border:1px solid var(--linea);border-radius:22px;padding:26px}
-.datos dl{display:grid;gap:16px;margin:8px 0 22px}
-.datos dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#b0707d;font-weight:600}
+.vis{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+@media(max-width:860px){.vis{grid-template-columns:1fr}}
+.vis>img{border-radius:var(--r);width:100%;height:100%;object-fit:cover;min-height:300px}
+.datos{background:#fff;border:1px solid var(--linea);border-radius:var(--r);padding:26px}
+.mapa{border:0;width:100%;height:210px;border-radius:16px;margin-bottom:18px}
+.datos dl{display:grid;gap:14px;margin-bottom:22px}
+.datos dt{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--rosa-o);font-weight:600}
 .datos dd{font-size:16px}
-.mapa{border:0;width:100%;height:220px;border-radius:14px;margin-bottom:18px}
+/* ig */
+.ig{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+@media(max-width:720px){.ig{grid-template-columns:repeat(3,1fr)}}
+.ig a{display:block;aspect-ratio:1/1;border-radius:14px;overflow:hidden}
+.ig img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.ig a:hover img{transform:scale(1.07)}
 /* preguntas */
-.faq details{border-bottom:1px solid var(--linea);padding:16px 0}
-.faq summary{cursor:pointer;font-weight:600;color:var(--cafe2);font-size:17px}
-.faq p{color:var(--gris);margin-top:8px;max-width:70ch}
-footer{background:var(--cafe2);color:#f1e6e2;padding:40px 0;font-size:14px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.faq details{border-bottom:1px solid var(--linea);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;color:var(--cafe2);font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary:after{content:"+";color:var(--rosa-o);font-size:24px;line-height:1}
+.faq details[open] summary:after{content:"–"}
+.faq p{color:var(--gris);margin-top:10px;max-width:72ch}
+footer{background:var(--cafe2);color:#e9dcd6;padding:56px 0 40px;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-end}
+footer h3{color:#fff;font-size:34px}
 footer a{color:var(--rosa)}
-.fab{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;align-items:center;gap:8px;background:var(--wa);color:#fff;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.fab svg{width:22px;height:22px;fill:#fff}
-@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+/* visor */
+.visor{position:fixed;inset:0;z-index:90;background:rgba(20,12,9,.88);display:grid;place-items:center;padding:20px}
+.visor img{max-height:86vh;max-width:min(92vw,620px);border-radius:16px}
+.visor button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:0;background:#fff;font-size:22px;cursor:pointer}
+/* botón flotante y asistente */
+.fab{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;align-items:center;gap:10px;background:var(--cafe2);color:#fff;padding:8px 18px 8px 8px;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 14px 34px -10px rgba(58,36,28,.7);border:0;cursor:pointer;font:600 15px Inter,sans-serif}
+.fab img{width:40px;height:40px;border-radius:50%;object-fit:cover;background:#fff}
+.fab:after{content:"";position:absolute;left:38px;top:8px;width:11px;height:11px;border-radius:50%;background:#3ad07a;border:2px solid var(--cafe2)}
+.asis{border-radius:24px!important;overflow:hidden;border:0!important;box-shadow:0 30px 70px -20px rgba(58,36,28,.55)!important}
+.asis-head{background:var(--cafe2);color:#fff;border:0!important;padding:16px 14px 16px 76px!important;position:relative;min-height:84px}
+.asis-head:before{content:"";position:absolute;left:16px;top:16px;width:48px;height:48px;border-radius:50%;background:#fff url(assets/logo.jpg) center/cover;border:2px solid var(--rosa)}
+.asis-head strong{font-family:Fraunces,serif!important;color:#fff}
+.asis-head span{color:#e3cfc9!important}
+.asis-direct{color:var(--rosa)!important}
+.asis-x{color:#fff!important}.asis-x:hover{background:rgba(255,255,255,.12)!important}
+.asis-log{background:var(--crema) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='2' cy='2' r='1.2' fill='%23ecdcd6'/%3E%3C/svg%3E")}
+.asis-log p.a,.asis-log p:not(.me):not(.asis-dots){background:#fff;border:1px solid var(--linea);border-radius:4px 18px 18px 18px;padding:10px 14px;max-width:86%!important;box-shadow:0 2px 6px -4px rgba(0,0,0,.15)}
+.asis-log .me{background:var(--cafe2)!important;color:#fff!important;font-style:normal!important;border:0!important;border-radius:18px 4px 18px 18px;padding:10px 14px!important;text-align:left!important}
+.asis-log .quote{background:var(--rosa2)!important;border:1.5px dashed var(--rosa-o)!important;border-radius:16px!important}
+.asis-opts{background:var(--crema)}
+.asis-chip{border-radius:999px!important;background:#fff!important;border-color:var(--rosa)!important;color:var(--cafe2)!important}
+.asis-chip:hover{background:var(--rosa2)!important}
+.asis-chip.is-primary{background:var(--wa)!important;border-color:var(--wa)!important;color:#fff!important}
+.asis-form{background:#fff}
+.asis-form input{border:1.5px solid var(--linea)!important;border-radius:999px!important;padding:10px 16px!important}
+.asis-form button{background:var(--rosa-o)!important}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap">
   <a class="marca" href="#"><img src="assets/logo.jpg" alt="Logo Los Avellanos"><div><b>Los Avellanos</b><small>Panadería &amp; Pastelería</small></div></a>
-  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#cotiza">Cotiza tu torta</a><a href="#panaderia">Panadería</a><a href="#visitanos">Visítanos</a></nav>
+  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#cotiza">Cotiza</a><a href="#vitrina">Vitrina</a><a href="#nosotros">Nosotros</a><a href="#visitanos">Visítanos</a></nav>
   <a class="btn btn-wa" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20vi%20su%20p%C3%A1gina%20web." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
 </div></header>
 
 <main>
 <section class="hero" aria-label="Portada">
-  <img src="assets/fachada.jpg" alt="Fachada de Panadería y Pastelería Los Avellanos en Av. Paseo Pie Andino, Puente Alto">
   <div class="wrap">
-    <span class="ojo">Panadería &amp; Pastelería · Puente Alto</span>
-    <h1>Tu torta, <em>como la imaginas</em></h1>
-    <p>Tortas personalizadas para cumpleaños y celebraciones, pan del día y pastelería en Av. Paseo Pie Andino. Elige sabor y tamaño, y mira el precio al tiro.</p>
-    <div class="acciones">
-      <a class="btn btn-cl" href="#cotiza">Cotizar mi torta</a>
-      <a class="btn btn-wa" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20quiero%20encargar%20una%20torta." target="_blank" rel="noopener">Encargar por WhatsApp</a>
+    <div>
+      <span class="ojo">Panadería &amp; Pastelería · Puente Alto</span>
+      <h1>Tu torta, <em>como la imaginas</em></h1>
+      <p class="lead">Personajes, temáticas, hobbies o la frase que quieras: hacemos tu torta decorada a tu gusto. Y todos los días, pan recién horneado, tartaletas, kuchen y berlines.</p>
+      <div class="acciones">
+        <a class="btn btn-cafe" href="#cotiza">Cotizar mi torta</a>
+        <a class="btn btn-wa" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20quiero%20encargar%20una%20torta." target="_blank" rel="noopener">Encargar por WhatsApp</a>
+      </div>
+      <div class="datos-h"><div><b>4,4 ★</b>158 opiniones en Google</div><div><b>16</b>sabores de torta</div><div><b>8:00</b>abrimos todos los días</div></div>
     </div>
-    <div class="sellos"><span>4,4 ★ en Google · 158 opiniones</span><span>Abierto todos los días desde las 8:00</span><span>16 sabores de torta</span></div>
+    <div class="collage">
+      <div class="sello"><svg viewBox="0 0 132 132" aria-hidden="true"><defs><path id="circ" d="M66,66 m-52,0 a52,52 0 1,1 104,0 a52,52 0 1,1 -104,0"/></defs><text><textPath href="#circ">tortas personalizadas · los avellanos · </textPath></text></svg><div><small>desde</small><b>$22.000</b><small>15 personas</small></div></div>
+      <figure class="f c1"><img src="assets/fachada.jpg" alt="Fachada de Panadería y Pastelería Los Avellanos en Av. Paseo Pie Andino, Puente Alto" style="object-position:30% 50%"></figure>
+      <figure class="f c2"><video src="assets/g/v-tortas.mp4" poster="assets/g/v-tortas.jpg" muted loop playsinline autoplay preload="metadata" aria-label="Video de una torta personalizada"></video></figure>
+      <figure class="f c3"><img src="assets/g/torta-f1.jpg" alt="Torta temática de Fórmula 1"></figure>
+    </div>
+  </div>
+</section>
+<div class="cinta" aria-hidden="true"><div class="mov"><span>Trufa manjar</span><span>Hojarasca frambuesa</span><span>Tres leches</span><span>Cuatro leches</span><span>Selva negra</span><span>Panqueque naranja</span><span>Milhojas</span><span>Sacher</span><span>Amapola</span><span>Holandesa</span><span>Trufa manjar</span><span>Hojarasca frambuesa</span><span>Tres leches</span><span>Cuatro leches</span><span>Selva negra</span><span>Panqueque naranja</span><span>Milhojas</span><span>Sacher</span><span>Amapola</span><span>Holandesa</span></div></div>
+
+<section class="reels" aria-label="Videos">
+  <div class="wrap">
+    <div class="cab"><span class="ojo">Lo rico de hoy</span><h2>Recién hecho, <em>en video</em></h2><p>Así se ve lo que sale cada día de nuestra cocina. Todo de nuestro Instagram, <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener">@los.avellanos</a>.</p></div>
+    <div class="tira">
+      <figure class="reel"><span class="vivo">● Tortas</span><video src="assets/g/v-tortas.mp4" poster="assets/g/v-tortas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Tortas 100% personalizadas<small>Con tu imagen favorita y frases especiales</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Pastelería</span><video src="assets/g/v-tartas.mp4" poster="assets/g/v-tartas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Todo fresquito hoy<small>Tartas y kuchen para endulzar tu día</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Postres</span><video src="assets/g/v-postres.mp4" poster="assets/g/v-postres.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Frutos rojos<small>Tartas y cheesecake</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Panadería</span><video src="assets/g/v-pan.mp4" poster="assets/g/v-pan.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Pan de todos los días<small>Marraqueta, hallulla y ciabatta</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Masas dulces</span><video src="assets/g/v-rico.mp4" poster="assets/g/v-rico.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Lo rico de hoy<small>Masas dulces recién horneadas</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● El local</span><video src="assets/g/v-local.mp4" poster="assets/g/v-local.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Nuestra vitrina<small>Local remodelado en Paseo Pie Andino</small></figcaption></figure>
+    </div>
   </div>
 </section>
 
 <section id="tortas">
   <div class="wrap">
-    <div class="cab"><span class="ojo2">Tortas a tu medida</span><h2>Tú lo imaginas, <em>nosotros lo hacemos</em></h2><p>Tortas decoradas a tu gusto: con nombre, edad, imagen comestible o la temática que quieras. Estas son algunas de las que hemos hecho.</p></div>
-    <div class="carr" data-carr>
-      <div class="pista" tabindex="0" aria-label="Fotos y videos de tortas">
-        <figure class="item"><span class="etq">Video</span><video src="assets/v-tortas.mp4" poster="assets/v-tortas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption><b>Tortas 100% personalizadas</b>Con imagen comestible, nombre y edad.</figcaption></figure>
-        <figure class="item"><img src="assets/torta-f1.jpg" alt="Torta temática de Fórmula 1 con nombre Daniel" loading="lazy"><figcaption><b>Temática Fórmula 1</b>Con topper, esferas y lámina personalizada.</figcaption></figure>
-        <figure class="item"><img src="assets/torta-trufa.jpg" alt="Torta de trufa de chocolate" loading="lazy"><figcaption><b>Trufa</b>Chocolate, manjar, frambuesa o nuez.</figcaption></figure>
-        <figure class="item"><img src="assets/torta-hojarasca.jpg" alt="Torta de hojarasca con manjar y guindas" loading="lazy"><figcaption><b>Hojarasca</b>Con manjar, pastelera o frambuesa.</figcaption></figure>
-        <figure class="item"><img src="assets/tartas-frutos.jpg" alt="Tartas de frutos rojos en la vitrina" loading="lazy"><figcaption><b>Tartas en vitrina</b>Para llevar al tiro.</figcaption></figure>
-      </div>
-      <div class="flechas"><button type="button" data-dir="-1" aria-label="Anterior">←</button><button type="button" data-dir="1" aria-label="Siguiente">→</button></div>
+    <div class="cab"><span class="ojo">Tortas a tu medida</span><h2>Tú lo imaginas, <em>nosotros lo hacemos</em></h2><p>Cuéntanos tu idea: el personaje, la temática, los colores o ese diseño especial que tienes en mente. Toca una foto para verla en grande.</p></div>
+    <div class="bento">
+      <figure class="g-a"><img src="assets/g/torta-f1.jpg" alt="Torta temática de Fórmula 1 con nombre Daniel" loading="lazy"><figcaption>Temática Fórmula 1</figcaption></figure>
+      <figure class="g-b"><img src="assets/g/torta-rosas.jpg" alt="Torta decorada con rosas para el Día de la Madre" loading="lazy"><figcaption>Con flores</figcaption></figure>
+      <figure><img src="assets/g/torta-cumple.jpg" alt="Torta con frase de feliz cumpleaños" loading="lazy"><figcaption>Con tu frase</figcaption></figure>
+      <figure><img src="assets/g/torta-trufa-manjar.jpg" alt="Torta trufa manjar" loading="lazy"><figcaption>Trufa manjar</figcaption></figure>
+      <figure class="g-b"><img src="assets/g/torta-merengue.jpg" alt="Torta con merengue y chocolate" loading="lazy"><figcaption>Merengue y chocolate</figcaption></figure>
+      <figure><img src="assets/g/torta-hojarasca.jpg" alt="Torta de hojarasca con manjar" loading="lazy"><figcaption>Hojarasca</figcaption></figure>
+      <figure><img src="assets/g/torta-crema.jpg" alt="Torta de crema decorada" loading="lazy"><figcaption>Crema</figcaption></figure>
+      <figure><img src="assets/g/torta-choco.jpg" alt="Torta de chocolate decorada para el Día de la Madre" loading="lazy"><figcaption>Chocolate</figcaption></figure>
+      <figure><img src="assets/g/torta-trufa.jpg" alt="Torta trufa de chocolate" loading="lazy"><figcaption>Trufa chocolate</figcaption></figure>
+      <figure><img src="assets/g/torta-2.jpg" alt="Torta lista para el postre" loading="lazy"><figcaption>Para hoy</figcaption></figure>
+      <figure><img src="assets/g/torta-1.jpg" alt="Torta decorada en vitrina" loading="lazy"><figcaption>De la vitrina</figcaption></figure>
     </div>
+    <div class="temas"><span>Personajes</span><span>Temáticas</span><span>Colores</span><span>Hobbies</span><span>Profesiones</span><span>Deportes</span><span>Imagen comestible</span><span>Toppers con nombre</span></div>
   </div>
 </section>
 
 <section id="cotiza" class="cot">
   <div class="wrap">
-    <div class="cab"><span class="ojo2">Cotiza tu torta</span><h2>Precio claro, <em>antes de encargar</em></h2><p>Elige sabor, cantidad de personas y los detalles que quieras. El precio sale de nuestra lista; los diseños especiales se cotizan por WhatsApp.</p></div>
+    <div class="cab"><span class="ojo">Cotiza tu torta</span><h2>Arma tu torta y <em>mira el precio</em></h2><p>Precios de nuestra lista oficial. Elige en tres pasos y te dejamos el pedido listo para enviarlo por WhatsApp.</p></div>
     <div class="cot-grid">
       <div class="panel">
-        <div class="campo"><label for="sabor">Sabor</label><select id="sabor"></select></div>
-        <div class="campo"><span id="lbl-tam" style="display:block;font-weight:600;font-size:14px;margin-bottom:8px;color:var(--cafe2)">¿Para cuántas personas?</span><div class="tam" id="tam" role="group" aria-labelledby="lbl-tam"></div><p class="nota">15 personas: formato redondo. Desde 20 personas: formato rectangular.</p></div>
-        <fieldset class="campo"><legend>Personalízala (opcional)</legend><div class="extras" id="extras"></div><p class="nota">Pack cumpleaños sugerido: imagen comestible + topper con nombre/edad + pequeños detalles, +$5.000.</p></fieldset>
+        <div class="campo"><div class="paso"><i>1</i>Elige el sabor</div><div class="sabores" id="sabores" role="group" aria-label="Sabor"></div></div>
+        <div class="campo"><div class="paso"><i>2</i>¿Para cuántas personas?</div><div class="tam" id="tam" role="group" aria-label="Tamaño"></div><p class="nota">15 personas: formato redondo · desde 20 personas: formato rectangular.</p></div>
+        <div class="campo" style="margin-bottom:0"><div class="paso"><i>3</i>Personalízala <span style="font-weight:400;color:var(--gris);font-size:13px">(opcional)</span></div><div class="extras" id="extras"></div>
+          <div class="pack"><div><b>Pack cumpleaños</b><br><span style="color:var(--gris);font-size:13px">Imagen comestible + topper con nombre/edad + detalles · +$5.000</span></div><button type="button" id="btn-pack">Agregar</button></div></div>
       </div>
-      <aside class="resumen" aria-live="polite">
-        <h3>Tu torta</h3>
+      <aside class="ticket" aria-live="polite">
+        <h3>Tu torta <small>Los Avellanos</small></h3>
         <ul id="res"></ul>
-        <div class="total" id="total">$0</div>
+        <div class="total"><span>Total</span><b id="total">$0</b></div>
         <small id="aviso">Valor de la presentación tradicional.</small>
         <a class="btn btn-wa" id="pedir" href="#" target="_blank" rel="noopener">Pedir esta torta por WhatsApp</a>
       </aside>
@@ -200,45 +326,71 @@ footer a{color:var(--rosa)}
   </div>
 </section>
 
-<section id="panaderia" class="pan">
+<section id="vitrina">
   <div class="wrap">
-    <div class="cab"><span class="ojo2">Panadería y más</span><h2>Recién salido <em>del horno</em></h2><p>Pan del día, rolls, berlines, empanadas y sopaipillas. Ven a buscarlos antes de que se acaben.</p></div>
-    <div class="carr" data-carr>
-      <div class="pista" tabindex="0" aria-label="Fotos y videos de panadería">
-        <figure class="item"><span class="etq">Video</span><video src="assets/v-empanadas.mp4" poster="assets/v-empanadas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption><b>Empanadas de pino</b>Recién horneadas.</figcaption></figure>
-        <figure class="item"><img src="assets/rolls.jpg" alt="Rolls recién horneados de distintos sabores" loading="lazy"><figcaption><b>Rolls</b>Variedad de sabores, recién horneados.</figcaption></figure>
-        <figure class="item"><img src="assets/berlines.jpg" alt="Berlines rellenos de crema pastelera" loading="lazy"><figcaption><b>Berlines</b>Rellenos de crema pastelera.</figcaption></figure>
-        <figure class="item"><img src="assets/sopaipillas.jpg" alt="Sopaipillas" loading="lazy"><figcaption><b>Sopaipillas</b>Para los días de lluvia (y los otros).</figcaption></figure>
-        <figure class="item"><img src="assets/merengue.jpg" alt="Merengue dorado de una torta" loading="lazy"><figcaption><b>Pastelería</b>Hecha en nuestro local.</figcaption></figure>
-      </div>
-      <div class="flechas"><button type="button" data-dir="-1" aria-label="Anterior">←</button><button type="button" data-dir="1" aria-label="Siguiente">→</button></div>
+    <div class="cab"><span class="ojo">La vitrina</span><h2>Para la once, <em>todos los días</em></h2><p>Lo que encuentras en nuestro local. Las variedades cambian según el día: pregúntanos por WhatsApp qué hay hoy.</p></div>
+    <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="pas">Pastelería</button><button role="tab" aria-selected="false" data-tab="pan">Panadería</button></div>
+    <div class="vitrina" data-panel="pas">
+      <article class="prod"><img src="assets/g/tartaletas.jpg" alt="Tartaletas de fruta" loading="lazy"><div><b>Tartaletas</b><p>De frutas, individuales y familiares.</p></div></article>
+      <article class="prod"><img src="assets/g/cheesecake.jpg" alt="Cheesecake de frutos del bosque" loading="lazy"><div><b>Cheesecake</b><p>Frutos del bosque, frambuesa, maracuyá, lúcuma o plátano manjar.</p></div></article>
+      <article class="prod"><img src="assets/g/pies.jpg" alt="Pies con merengue italiano" loading="lazy"><div><b>Pies</b><p>Con merengue italiano: limón, maracuyá o frambuesa.</p></div></article>
+      <article class="prod"><img src="assets/g/kuchen.jpg" alt="Kuchen y tartas de frutos rojos" loading="lazy"><div><b>Kuchen y tartas</b><p>Variedades que cambian cada día.</p></div></article>
+      <article class="prod"><img src="assets/g/tartas-frutos.jpg" alt="Tartas de frutos rojos" loading="lazy"><div><b>Frutos rojos</b><p>Tartas para acompañar el café.</p></div></article>
+      <article class="prod"><img src="assets/g/queque.jpg" alt="Queque con fruta caramelizada" loading="lazy"><div><b>Queques</b><p>Con fruta caramelizada: piña, durazno o plátano.</p></div></article>
+      <article class="prod"><img src="assets/g/tarta-2.jpg" alt="Tarta de frambuesa" loading="lazy"><div><b>Tartas</b><p>Frescas, de la vitrina.</p></div></article>
+      <article class="prod"><img src="assets/g/galletas.jpg" alt="Galletas con mermelada" loading="lazy"><div><b>Masas dulces</b><p>Galletas, alfajores, mendocinos y delicias.</p></div></article>
     </div>
-    <p class="nota" style="margin-top:18px">Más fotos y videos en nuestro Instagram, <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener">@los.avellanos</a>.</p>
+    <div class="vitrina" data-panel="pan" hidden>
+      <article class="prod"><img src="assets/g/pan.jpg" alt="Pan recién horneado" loading="lazy"><div><b>Pan del día</b><p>Marraqueta crujiente, hallulla y, en las mañanas, ciabatta.</p></div></article>
+      <article class="prod"><img src="assets/g/rolls.jpg" alt="Rolls recién horneados" loading="lazy"><div><b>Rolls</b><p>Canela, manzana nuez y chips de chocolate.</p></div></article>
+      <article class="prod"><img src="assets/g/berlines.jpg" alt="Berlines rellenos" loading="lazy"><div><b>Berlines</b><p>Rellenos de crema pastelera.</p></div></article>
+      <article class="prod"><img src="assets/g/trenzas.jpg" alt="Trenzas rusas" loading="lazy"><div><b>Trenzas rusas</b><p>Para compartir.</p></div></article>
+      <article class="prod"><img src="assets/g/empanadas.jpg" alt="Empanadas de pino" loading="lazy"><div><b>Empanadas de pino</b><p>De carne picada.</p></div></article>
+      <article class="prod"><img src="assets/g/sopaipillas.jpg" alt="Sopaipillas" loading="lazy"><div><b>Sopaipillas</b><p>Para los días de frío.</p></div></article>
+      <article class="prod"><img src="assets/g/roll-canela.jpg" alt="Roll de canela con café" loading="lazy"><div><b>Café + roll</b><p>Café de máquina con un roll de canela.</p></div></article>
+      <article class="prod"><img src="assets/g/roll-2.jpg" alt="Roll glaseado" loading="lazy"><div><b>Más masas</b><p>Bretzel, brownie y trenzas.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="nosotros" class="equipo">
+  <div class="wrap eq">
+    <div class="eq-fotos">
+      <video class="alta" src="assets/g/v-local.mp4" poster="assets/g/v-local.jpg" muted loop playsinline preload="none" data-auto aria-label="Video del local"></video>
+      <img src="assets/g/equipo.jpg" alt="Equipo de Los Avellanos con una torta" loading="lazy">
+      <img src="assets/g/vitrina.jpg" alt="Vitrina con pasteles" loading="lazy">
+    </div>
+    <div>
+      <span class="ojo">Nosotros</span>
+      <p class="cita">“Estamos en proceso de mejorar siempre.”</p>
+      <p style="color:var(--gris);font-size:17px">Somos la panadería y pastelería del barrio en Paseo Pie Andino. Remodelamos el local para recibirte mejor, y cada día salen del horno pan, pasteles y tortas.</p>
+      <ul class="lista-c"><li>Tortas personalizadas según tu idea.</li><li>Pan recién horneado todos los días.</li><li>Abierto de lunes a domingo desde las 8:00.</li><li>Local recién remodelado, como cuentan nuestros clientes.</li></ul>
+    </div>
   </div>
 </section>
 
 <section id="opiniones">
   <div class="wrap">
-    <div class="cab"><span class="ojo2">Opiniones en Google</span><h2>Lo que dicen <em>nuestros clientes</em></h2></div>
-    <div class="nota-g"><b>4,4</b><div><div class="est" style="color:#c9963b;letter-spacing:2px">★★★★☆</div><small style="color:var(--gris)">158 opiniones en Google</small></div></div>
+    <div class="cab"><span class="ojo">Opiniones en Google</span><h2>Lo que dicen <em>en el barrio</em></h2></div>
+    <div class="nota-g"><b>4,4</b><div><div style="color:var(--oro);letter-spacing:2px">★★★★☆</div><small style="color:var(--gris)">158 opiniones en Google</small></div></div>
     <div class="ops">
-      <article class="op"><div class="est">★★★★★</div><p>“El pan más rico del barrio y siempre tienen de todo.”</p><small>Felipe B.</small></article>
-      <article class="op"><div class="est">★★★★☆</div><p>“Exquisitos panes… Un deleite la marraqueta crujiente calentita… Y las niñas que atienden un amor.”</p><small>Carolina P.</small></article>
-      <article class="op"><div class="est">★★★★★</div><p>“Se agradece su remodelación, quedó muy bien. Buena calidad de pan y productos.”</p><small>Juan C.</small></article>
+      <article class="op"><div class="est">★★★★★</div><p>El pan más rico del barrio y siempre tienen de todo.</p><small>Felipe B.</small></article>
+      <article class="op"><div class="est">★★★★☆</div><p>Exquisitos panes… Un deleite la marraqueta crujiente calentita… Y las niñas que atienden un amor.</p><small>Carolina P.</small></article>
+      <article class="op"><div class="est">★★★★★</div><p>Se agradece su remodelación, quedó muy bien. Buena calidad de pan y productos.</p><small>Juan C.</small></article>
     </div>
   </div>
 </section>
 
 <section id="visitanos" style="background:#fff">
   <div class="wrap">
-    <div class="cab"><span class="ojo2">Visítanos</span><h2>En Paseo Pie Andino, <em>Puente Alto</em></h2></div>
+    <div class="cab"><span class="ojo">Visítanos</span><h2>En Paseo Pie Andino, <em>Puente Alto</em></h2></div>
     <div class="vis">
       <img src="assets/fachada.jpg" alt="Local de Los Avellanos" loading="lazy">
       <div class="datos">
         <iframe class="mapa" title="Mapa de Los Avellanos" loading="lazy" src="https://www.google.com/maps?q=-33.594366,-70.554522&z=16&output=embed"></iframe>
         <dl>
           <div><dt>Dirección</dt><dd>Av. Paseo Pie Andino 01848, Puente Alto</dd></div>
-          <div><dt>Horario</dt><dd>Lunes a sábado, 8:00 a 21:30<br>Domingo, 8:00 a 21:00</dd></div>
+          <div><dt>Horario</dt><dd>Lunes a sábado, 8:00 a 21:30 · Domingo, 8:00 a 21:00</dd></div>
           <div><dt>WhatsApp</dt><dd>+56 9 8703 7364</dd></div>
         </dl>
         <div class="acciones" style="margin-top:0"><a class="btn btn-ln" href="https://www.google.com/maps/dir/?api=1&destination=-33.594366,-70.554522" target="_blank" rel="noopener">Cómo llegar</a><a class="btn btn-wa" href="https://wa.me/56987037364" target="_blank" rel="noopener">Escribir</a></div>
@@ -248,50 +400,67 @@ footer a{color:var(--rosa)}
 </section>
 
 <section id="preguntas">
-  <div class="wrap faq">
-    <div class="cab"><span class="ojo2">Preguntas frecuentes</span><h2>Antes de <em>encargar</em></h2></div>
+  <div class="wrap faq" style="max-width:860px">
+    <div class="cab centro"><span class="ojo">Preguntas frecuentes</span><h2>Antes de <em>encargar</em></h2></div>
     <details><summary>¿Qué incluye el precio de la torta?</summary><p>Los valores de la lista corresponden a la presentación tradicional. Las decoraciones y accesorios especiales se cobran por separado.</p></details>
     <details><summary>¿Qué formato tiene cada tamaño?</summary><p>La torta de 15 personas es redonda. Desde 20 personas el formato es rectangular. La Milhojas parte desde 20 personas.</p></details>
-    <details><summary>¿Pueden hacer un diseño especial?</summary><p>Sí. Tenemos toppers, esferas, mariposas, imagen comestible y decoración temática completa. Las figuras o modelados de mayor complejidad se cotizan antes, por WhatsApp.</p></details>
-    <details><summary>¿Cómo encargo?</summary><p>Arma tu torta en el cotizador y toca «Pedir esta torta por WhatsApp»: te llega el mensaje listo con sabor, tamaño y detalles para coordinar la fecha.</p></details>
-    <details><summary>¿Dónde están y en qué horario?</summary><p>En Av. Paseo Pie Andino 01848, Puente Alto. De lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00.</p></details>
+    <details><summary>¿Pueden hacer un diseño especial?</summary><p>Sí: personajes, temáticas, colores, hobbies, profesiones o deportes. Tenemos toppers, esferas, mariposas, imagen comestible y decoración temática completa. Las figuras o modelados de mayor complejidad se cotizan antes, por WhatsApp.</p></details>
+    <details><summary>¿Cómo encargo?</summary><p>En nuestro local o por WhatsApp. Arma tu torta en el cotizador y toca «Pedir esta torta por WhatsApp»: te llega el mensaje listo con sabor, tamaño y detalles para coordinar la fecha.</p></details>
+    <details><summary>¿Hay tortas para llevar el mismo día?</summary><p>En la vitrina solemos tener tortas y pasteles disponibles para el día. Escríbenos por WhatsApp y te contamos qué hay hoy.</p></details>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="cab centro"><span class="ojo">Instagram</span><h2>Síguenos en <em>@los.avellanos</em></h2></div>
+    <div class="ig">
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/torta-1.jpg" alt="Torta en Instagram" loading="lazy"></a>
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/rolls.jpg" alt="Rolls en Instagram" loading="lazy"></a>
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/torta-2.jpg" alt="Torta en Instagram" loading="lazy"></a>
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/equipo-18.jpg" alt="Equipo de Los Avellanos en Fiestas Patrias" loading="lazy"></a>
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/local-2.jpg" alt="Interior del local" loading="lazy"></a>
+      <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener"><img src="assets/g/local.jpg" alt="Vitrina del local" loading="lazy"></a>
+    </div>
   </div>
 </section>
 </main>
 
-<footer><div class="wrap"><div><b style="font-family:Fraunces,serif;font-size:18px">Los Avellanos</b><br>Panadería &amp; Pastelería · Av. Paseo Pie Andino 01848, Puente Alto</div><div><a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener">Instagram</a> · <a href="https://wa.me/56987037364" target="_blank" rel="noopener">WhatsApp</a></div></div></footer>
+<footer><div class="wrap"><div><h3>Los Avellanos</h3>Panadería &amp; Pastelería · Av. Paseo Pie Andino 01848, Puente Alto</div><div><a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener">Instagram</a> · <a href="https://wa.me/56987037364" target="_blank" rel="noopener">WhatsApp</a></div></div></footer>
 
-<a class="fab" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20vi%20su%20p%C3%A1gina%20web." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>¿Encargas?</a>
+<a class="fab" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20vi%20su%20p%C3%A1gina%20web." target="_blank" rel="noopener" aria-label="Abrir el asistente de Los Avellanos"><img src="assets/logo.jpg" alt=""><span class="fab-txt">¿Te ayudo a encargar?</span></a>
 
 <script>
 (function(){
 var T=[15,20,25,30,35,40,45,50,60];
 var P={"Piña Clásica":[22000,28000,34000,40000,46000,52000,58000,64000,76000],"Durazno":[22000,28000,34000,40000,46000,52000,58000,64000,76000],"Selva Negra":[22500,28500,34500,40500,46500,52500,58500,64500,76500],"Sacher":[23000,29000,35000,41000,47000,53000,59000,65000,77000],"Tres Leches":[22500,28500,34500,40500,46500,52500,58500,64500,76500],"Cuatro Leches":[23500,29500,35500,41500,47500,53500,59500,65500,77500],"Panqueque Naranja":[23500,30000,36500,43000,49500,56000,62500,69000,82000],"Trufa Manjar":[23500,30000,36500,43000,49500,56000,62500,69000,82000],"Trufa Frambuesa":[23500,30000,36500,43000,49500,56000,62500,69000,82000],"Trufa Chocolate Nuez":[23500,30000,36500,43000,49500,56000,62500,69000,82000],"Hojarasca Manjar":[23000,29500,36000,42500,49000,55500,62000,68500,81500],"Hojarasca Manjar Pastelera":[24000,30500,37000,43500,50000,56500,63000,69500,82500],"Hojarasca Manjar Frambuesa":[25000,31500,38000,44500,51000,57500,64000,70500,83500],"Holandesa":[25000,31500,38000,44500,51000,57500,64000,70500,83500],"Amapola":[24000,30500,37000,43500,50000,56500,63000,69500,82500],"Milhojas":[null,32000,39000,46000,53000,60000,67000,74000,88000]};
-var X=[["Topper sencillo con nombre y/o edad",2000,0],["Topper temático",3000,1],["Esferas decorativas",2000,1],["Mariposas, estrellas o corazones",1500,1],["Imagen comestible en lámina de arroz",2500,0],["Lámina de arroz personalizada con nombre/edad",3000,0],["Personajes recortados en lámina de arroz",3500,1],["Decoración temática completa",4000,1],["Figuras o modelados de mayor complejidad",null,1]];
+var X=[["Topper sencillo con nombre y/o edad",2000,0],["Topper temático",3000,1],["Esferas decorativas",2000,1],["Mariposas, estrellas o corazones",1500,1],["Imagen comestible en lámina de arroz",2500,0],["Lámina de arroz con nombre/edad",3000,0],["Personajes recortados en lámina",3500,1],["Decoración temática completa",4000,1],["Figuras o modelados complejos",null,1]];
 var $=function(i){return document.getElementById(i)},f=function(n){return "$"+n.toLocaleString("es-CL")};
-var s=$("sabor"),tm=$("tam"),ex=$("extras"),ti=0;
-Object.keys(P).forEach(function(k){var o=document.createElement("option");o.textContent=k;s.appendChild(o)});
-T.forEach(function(t,i){var b=document.createElement("button");b.type="button";b.textContent=t+" p.";b.setAttribute("aria-pressed","false");b.onclick=function(){ti=i;pinta()};tm.appendChild(b)});
-X.forEach(function(x,i){var l=document.createElement("label");l.innerHTML='<input type="checkbox" value="'+i+'"><span>'+x[0]+'</span><em>'+(x[1]===null?"Se cotiza":(x[2]?"desde ":"+")+f(x[1]))+'</em>';l.querySelector("input").onchange=pinta;ex.appendChild(l)});
-s.onchange=function(){if(P[s.value][ti]===null)ti=1;pinta()};
-function pinta(){var p=P[s.value];if(p[ti]===null)ti=1;
+var sb=$("sabores"),tm=$("tam"),ex=$("extras"),ti=0,sab="Trufa Manjar",pack=false;
+Object.keys(P).forEach(function(k){var b=document.createElement("button");b.type="button";b.textContent=k;b.onclick=function(){sab=k;if(P[k][ti]===null)ti=1;pinta()};sb.appendChild(b)});
+T.forEach(function(t,i){var b=document.createElement("button");b.type="button";b.textContent=t+" p.";b.onclick=function(){ti=i;pinta()};tm.appendChild(b)});
+X.forEach(function(x,i){var l=document.createElement("label");l.innerHTML='<input type="checkbox" value="'+i+'"><span>'+x[0]+'</span><em>'+(x[1]===null?"cotizar":(x[2]?"desde ":"+")+f(x[1]))+'</em>';l.querySelector("input").onchange=pinta;ex.appendChild(l)});
+$("btn-pack").onclick=function(){pack=!pack;this.textContent=pack?"Quitar":"Agregar";pinta()};
+function pinta(){var p=P[sab];
+ [].forEach.call(sb.children,function(b){b.setAttribute("aria-pressed",b.textContent===sab?"true":"false")});
  [].forEach.call(tm.children,function(b,i){b.disabled=p[i]===null;b.setAttribute("aria-pressed",i===ti?"true":"false")});
- var base=p[ti],tot=base,desde=false,cot=false,li=['<li><span>'+s.value+' · '+T[ti]+' personas</span><span>'+f(base)+'</span></li>'],det=[];
- [].forEach.call(ex.querySelectorAll("input:checked"),function(c){var x=X[+c.value];det.push(x[0]);if(x[1]===null){cot=true;li.push('<li><span>'+x[0]+'</span><span>se cotiza</span></li>')}else{tot+=x[1];if(x[2])desde=true;li.push('<li><span>'+x[0]+'</span><span>'+(x[2]?"desde ":"")+f(x[1])+'</span></li>')}});
+ var base=p[ti],tot=base,desde=false,cot=false,li=['<li><span>'+sab+'<br><small style="margin:0;color:var(--gris)">'+T[ti]+' personas · '+(T[ti]===15?"redonda":"rectangular")+'</small></span><span>'+f(base)+'</span></li>'],det=[];
+ if(pack){tot+=5000;det.push("Pack cumpleaños");li.push('<li><span>Pack cumpleaños</span><span>+$5.000</span></li>')}
+ [].forEach.call(ex.querySelectorAll("input:checked"),function(c){var x=X[+c.value];det.push(x[0]);if(x[1]===null){cot=true;li.push('<li><span>'+x[0]+'</span><span>se cotiza</span></li>')}else{tot+=x[1];if(x[2])desde=true;li.push('<li><span>'+x[0]+'</span><span>'+(x[2]?"desde ":"+")+f(x[1])+'</span></li>')}});
  $("res").innerHTML=li.join("");$("total").textContent=(desde||cot?"desde ":"")+f(tot);
- $("aviso").textContent=det.length?"El valor final puede variar según el diseño; los detalles especiales se confirman por WhatsApp.":"Valor de la presentación tradicional ("+(T[ti]===15?"redonda":"rectangular")+").";
- var m="Hola Los Avellanos, vi su página web y quiero cotizar una torta:\n- Sabor: "+s.value+"\n- Tamaño: "+T[ti]+" personas\n"+(det.length?"- Detalles: "+det.join(", ")+"\n":"")+"- Valor de referencia: "+(desde||cot?"desde ":"")+f(tot)+"\n¿Para qué fecha la tendrían?";
+ $("aviso").textContent=det.length?"El valor final puede variar según el diseño; los detalles especiales se confirman por WhatsApp.":"Valor de la presentación tradicional.";
+ var m="Hola Los Avellanos, vi su página web y quiero cotizar una torta:\n- Sabor: "+sab+"\n- Tamaño: "+T[ti]+" personas\n"+(det.length?"- Detalles: "+det.join(", ")+"\n":"")+"- Valor de referencia: "+(desde||cot?"desde ":"")+f(tot)+"\n¿Para qué fecha la tendrían?";
  $("pedir").href="https://wa.me/56987037364?text="+encodeURIComponent(m)}
 var h='<thead><tr><th>Torta</th>'+T.map(function(t){return'<th>'+t+' p.</th>'}).join("")+'</tr></thead><tbody>';
 Object.keys(P).forEach(function(k){h+='<tr><td>'+k+'</td>'+P[k].map(function(v){return'<td>'+(v===null?"–":f(v))+'</td>'}).join("")+'</tr>'});
-$("tabla").innerHTML=h+'</tbody>';ti=0;pinta();
-document.querySelectorAll("[data-carr]").forEach(function(c){var p=c.querySelector(".pista");c.querySelectorAll("[data-dir]").forEach(function(b){b.onclick=function(){p.scrollBy({left:(+b.dataset.dir)*p.clientWidth*.8,behavior:"smooth"})}})});
+$("tabla").innerHTML=h+'</tbody>';pinta();
+document.querySelectorAll("[data-tab]").forEach(function(b){b.onclick=function(){document.querySelectorAll("[data-tab]").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==b.dataset.tab})}});
+document.querySelectorAll(".bento img,.prod img").forEach(function(i){i.onclick=function(){var v=document.createElement("div");v.className="visor";v.innerHTML='<img src="'+i.src+'" alt="'+i.alt+'"><button type="button" aria-label="Cerrar">×</button>';v.onclick=function(e){if(e.target!==v.querySelector("img"))v.remove()};document.body.appendChild(v)}});
 var red=matchMedia("(prefers-reduced-motion: reduce)").matches;
-if("IntersectionObserver"in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload="auto";v.play().catch(function(){})}else v.pause()})},{threshold:.5});document.querySelectorAll("video[data-auto]").forEach(function(v){io.observe(v)})}
+if("IntersectionObserver"in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload="auto";v.play().catch(function(){})}else v.pause()})},{threshold:.4});document.querySelectorAll("video[data-auto]").forEach(function(v){io.observe(v)})}
 })();
 </script>
 <link rel="stylesheet" href="asistente.css">
-<script>window.ASISTENTE={"negocio":"Los Avellanos","persona":"Los Avellanos","wa":"56987037364","boton":"¿Encargas?","saludo":"Hola, soy el asistente de Los Avellanos. ¿Qué quieres encargar?","cuando":[{"t":"Esta semana","m":"La necesito esta semana."},{"t":"Fecha especial","m":"Es para una fecha especial que le cuento."},{"t":"Todavía no sé","m":"Aún no tengo fecha definida."}],"servicios":[{"n":"Torta personalizada","info":"Con nombre, edad, imagen comestible o temática.","opts":[],"kw":"torta|cumple|pastel"},{"n":"Torta tradicional","info":"16 sabores, de 15 a 60 personas.","opts":[],"kw":"sabor|trufa|hojarasca|milhoja"},{"n":"Panadería","info":"Pan, rolls, berlines y empanadas.","opts":[],"kw":"pan|empanada|berlin|roll"}],"faq":[{"pri":true,"kw":"precio|valor|cuanto|costo|cobra|sale|presupuesto|cotiz","r":"Las tortas van desde $22.000 (15 personas). En el cotizador de esta página eliges sabor y tamaño y ves el precio; los diseños especiales se cotizan por WhatsApp."},{"kw":"donde|direccion|ubicacion|comuna|zona|sector|llegan","r":"Estamos en Av. Paseo Pie Andino 01848, Puente Alto."},{"kw":"horario|hora|abren|atienden|sabado|domingo|noche","r":"Atendemos de lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00."},{"kw":"redond|rectang|formato|tamano|personas","r":"La de 15 personas es redonda; desde 20 personas es rectangular."},{"kw":"pago|transferencia|efectivo|tarjeta","r":"La forma de pago se coordina directamente por WhatsApp."}]};</script>
+<script>window.ASISTENTE={"negocio":"Los Avellanos","persona":"Los Avellanos","wa":"56987037364","boton":"¿Te ayudo a encargar?","saludo":"¡Hola! 👋 Soy el asistente de Los Avellanos. Te ayudo a encargar tu torta o a resolver dudas. ¿Qué buscas?","confirma":"te respondemos","agendar":"Quiero encargar","cuando":[{"t":"Esta semana","m":"La necesito esta semana."},{"t":"Para un cumpleaños","m":"Es para un cumpleaños, le cuento la fecha."},{"t":"Todavía no sé","m":"Aún no tengo fecha definida."}],"servicios":[{"n":"🎂 Torta personalizada","info":"Personajes, temáticas, imagen comestible o la frase que quieras. Desde $22.000 (15 personas) más los detalles.","opts":["Imagen comestible","Topper con nombre","Temática completa"],"kw":"torta|cumple|personaliz|tematic|personaje"},{"n":"🍰 Torta tradicional","info":"16 sabores, de 15 a 60 personas: trufas, hojarascas, tres y cuatro leches, milhojas y más.","opts":["15 personas","20 a 30 personas","Más de 30"],"kw":"sabor|trufa|hojarasca|milhoja|leches|selva"},{"n":"🥖 Panadería y vitrina","info":"Pan del día, rolls, berlines, kuchen, tartaletas, cheesecake y empanadas.","opts":[],"kw":"pan|empanada|berlin|roll|kuchen|tartalet|cheesec|pie"}],"faq":[{"pri":true,"kw":"precio|valor|cuanto|costo|cobra|sale|presupuesto|cotiz","r":"Las tortas van desde $22.000 (15 personas) hasta $88.000 (Milhojas, 60 personas). En el cotizador de la página eliges sabor y tamaño y ves el precio exacto; las decoraciones se suman aparte."},{"kw":"sabor|sabores","r":"Tenemos 16 sabores: Piña Clásica, Durazno, Selva Negra, Sacher, Tres Leches, Cuatro Leches, Panqueque Naranja, Trufa (manjar, frambuesa o chocolate nuez), Hojarasca (manjar, pastelera o frambuesa), Holandesa, Amapola y Milhojas."},{"kw":"donde|direccion|ubicacion|comuna|zona|sector|llegar","r":"Estamos en Av. Paseo Pie Andino 01848, Puente Alto."},{"kw":"horario|hora|abren|atienden|sabado|domingo|noche|cierran","r":"Atendemos de lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00."},{"kw":"redond|rectang|formato|tamano|personas","r":"La de 15 personas es redonda; desde 20 personas es rectangular. La Milhojas parte desde 20 personas."},{"kw":"topper|imagen|lamina|esfera|mariposa|decora|pack","r":"Topper con nombre $2.000, imagen comestible $2.500, lámina con nombre/edad $3.000 y decoración temática desde $4.000. El pack cumpleaños (imagen + topper + detalles) suma $5.000."},{"kw":"hoy|disponible|vitrina|ahora","r":"En la vitrina solemos tener tortas y pasteles para el día. Escríbenos por WhatsApp y te contamos qué hay hoy."},{"kw":"pago|transferencia|efectivo|tarjeta","r":"La forma de pago se coordina directamente por WhatsApp o en el local."}]};</script>
 <script src="asistente.js" defer></script>
 </body>
 </html>
