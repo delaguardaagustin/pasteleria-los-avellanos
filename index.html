@@ -16,7 +16,7 @@
 /* variables que usa el asistente */
 --bg:#fffaf6;--surface:#f6e7e9;--text:#2b1d17;--muted:#7b6a63;--accent:#b46b7a;--line:#ecdcd6;--font:Inter,system-ui,sans-serif;--display:Fraunces,Georgia,serif;--asis-radius:20px;--asis-tone:#5c3d31}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img,video{display:block;max-width:100%}
 a{color:inherit}
@@ -164,6 +164,35 @@ tbody tr:hover td{background:rgba(255,255,255,.05)}
 .prod b{font-family:Fraunces,serif;font-size:19px;color:var(--cafe2);display:block}
 .prod p{font-size:13.5px;color:var(--gris);margin-top:4px}
 [hidden]{display:none!important}
+/* filtros tortas */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 22px}
+.filtros button{padding:9px 16px;border-radius:999px;border:1.5px solid var(--linea);background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--cafe);cursor:pointer}
+.filtros button[aria-pressed=true]{background:var(--rosa-o);border-color:var(--rosa-o);color:#fff}
+.bento{grid-auto-flow:dense}
+.bento.filtrado figure{grid-column:auto;grid-row:auto}
+/* café */
+.cafe{background:var(--rosa2)}
+.cafe-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+@media(max-width:860px){.cafe-g{grid-template-columns:1fr;gap:28px}}
+.cafe-vid{position:relative;max-width:340px;margin-inline:auto;width:100%}
+.cafe-vid video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:34px;border:6px solid #fff;box-shadow:0 30px 50px -28px rgba(58,36,28,.7);background:#000}
+.cafe-vid .mano{position:absolute;right:-18px;bottom:46px;background:#fff;padding:8px 14px;border-radius:14px;transform:rotate(-6deg);box-shadow:0 10px 20px -12px rgba(0,0,0,.4)}
+@media(max-width:480px){.cafe-vid .mano{right:-4px}}
+.cafe-h{font-size:clamp(34px,4.6vw,56px);color:var(--cafe2);margin:12px 0 14px}
+.cafe-h em{color:var(--rosa-o);font-style:italic;font-weight:500}
+.cafe-p{color:var(--gris);font-size:17px}
+.combos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
+@media(max-width:560px){.combos{grid-template-columns:1fr}}
+.combos div{background:#fff;border-radius:18px;padding:10px;border:1px solid var(--linea);display:grid;grid-template-columns:56px 1fr;column-gap:12px;align-items:center}
+.combos img{width:56px;height:56px;border-radius:12px;object-fit:cover;grid-row:span 2;cursor:zoom-in}
+.combos b{font-size:14.5px;color:var(--cafe2);line-height:1.2}
+.combos span{font-size:12.5px;color:var(--gris)}
+/* obrador */
+.obrador{background:var(--cafe);color:var(--crema)}
+.obrador .cab h2{color:#fff}.obrador .cab p{color:#e3d4cc}.obrador .ojo{color:var(--rosa)}
+.obr{grid-auto-columns:minmax(220px,1fr)}
+@media(max-width:720px){.obr{grid-auto-columns:62%}}
+.obr .reel{border-color:rgba(255,255,255,.15)}
 /* equipo */
 .equipo{background:var(--crema2)}
 .eq{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -243,7 +272,7 @@ footer a{color:var(--rosa)}
 <body>
 <header class="top"><div class="wrap">
   <a class="marca" href="#"><img src="assets/logo.jpg" alt="Logo Los Avellanos"><div><b>Los Avellanos</b><small>Panadería &amp; Pastelería</small></div></a>
-  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#cotiza">Cotiza</a><a href="#vitrina">Vitrina</a><a href="#nosotros">Nosotros</a><a href="#visitanos">Visítanos</a></nav>
+  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#cotiza">Cotiza</a><a href="#vitrina">Vitrina</a><a href="#cafe">Café</a><a href="#nosotros">Nosotros</a><a href="#visitanos">Visítanos</a></nav>
   <a class="btn btn-wa" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20vi%20su%20p%C3%A1gina%20web." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
 </div></header>
 
@@ -275,6 +304,12 @@ footer a{color:var(--rosa)}
     <div class="cab"><span class="ojo">Lo rico de hoy</span><h2>Recién hecho, <em>en video</em></h2><p>Así se ve lo que sale cada día de nuestra cocina. Todo de nuestro Instagram, <a href="https://www.instagram.com/los.avellanos/" target="_blank" rel="noopener">@los.avellanos</a>.</p></div>
     <div class="tira">
       <figure class="reel"><span class="vivo">● Tortas</span><video src="assets/g/v-tortas.mp4" poster="assets/g/v-tortas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Tortas 100% personalizadas<small>Con tu imagen favorita y frases especiales</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Con tu frase</span><video src="assets/g/v-abuelita.mp4" poster="assets/g/v-abuelita.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Feliz cumple, abuelita<small>Escribimos la frase que quieras</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Con tu foto</span><video src="assets/g/v-mamita.mp4" poster="assets/g/v-mamita.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Tu foto en la torta<small>Imagen comestible en lámina de arroz</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Diseños</span><video src="assets/g/v-leopardo.mp4" poster="assets/g/v-leopardo.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Diseños que se lucen<small>Animal print, flores y colores a elección</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Vitrina</span><video src="assets/g/v-vitrina.mp4" poster="assets/g/v-vitrina.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Postres del día<small>Tres leches, cheesecake y pie de limón</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Clásicas</span><video src="assets/g/v-trozos.mp4" poster="assets/g/v-trozos.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Trufa, manjar y chocolate<small>Nuestras tortas de siempre</small></figcaption></figure>
+      <figure class="reel"><span class="vivo">● Masas dulces</span><video src="assets/g/v-muffins.mp4" poster="assets/g/v-muffins.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Muffins recién horneados<small>Para el desayuno o la once</small></figcaption></figure>
       <figure class="reel"><span class="vivo">● Pastelería</span><video src="assets/g/v-tartas.mp4" poster="assets/g/v-tartas.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Todo fresquito hoy<small>Tartas y kuchen para endulzar tu día</small></figcaption></figure>
       <figure class="reel"><span class="vivo">● Postres</span><video src="assets/g/v-postres.mp4" poster="assets/g/v-postres.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Frutos rojos<small>Tartas y cheesecake</small></figcaption></figure>
       <figure class="reel"><span class="vivo">● Panadería</span><video src="assets/g/v-pan.mp4" poster="assets/g/v-pan.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Pan de todos los días<small>Marraqueta, hallulla y ciabatta</small></figcaption></figure>
@@ -287,18 +322,29 @@ footer a{color:var(--rosa)}
 <section id="tortas">
   <div class="wrap">
     <div class="cab"><span class="ojo">Tortas a tu medida</span><h2>Tú lo imaginas, <em>nosotros lo hacemos</em></h2><p>Cuéntanos tu idea: el personaje, la temática, los colores o ese diseño especial que tienes en mente. Toca una foto para verla en grande.</p></div>
+    <div class="filtros" role="group" aria-label="Filtrar tortas"><button type="button" data-f="todas" aria-pressed="true">Todas</button><button type="button" data-f="foto" aria-pressed="false">Con foto</button><button type="button" data-f="frase" aria-pressed="false">Con frase</button><button type="button" data-f="tema" aria-pressed="false">Temáticas</button><button type="button" data-f="clasica" aria-pressed="false">Clásicas</button></div>
     <div class="bento">
-      <figure class="g-a"><img src="assets/g/torta-f1.jpg" alt="Torta temática de Fórmula 1 con nombre Daniel" loading="lazy"><figcaption>Temática Fórmula 1</figcaption></figure>
-      <figure class="g-b"><img src="assets/g/torta-rosas.jpg" alt="Torta decorada con rosas para el Día de la Madre" loading="lazy"><figcaption>Con flores</figcaption></figure>
-      <figure><img src="assets/g/torta-cumple.jpg" alt="Torta con frase de feliz cumpleaños" loading="lazy"><figcaption>Con tu frase</figcaption></figure>
-      <figure><img src="assets/g/torta-trufa-manjar.jpg" alt="Torta trufa manjar" loading="lazy"><figcaption>Trufa manjar</figcaption></figure>
-      <figure class="g-b"><img src="assets/g/torta-merengue.jpg" alt="Torta con merengue y chocolate" loading="lazy"><figcaption>Merengue y chocolate</figcaption></figure>
-      <figure><img src="assets/g/torta-hojarasca.jpg" alt="Torta de hojarasca con manjar" loading="lazy"><figcaption>Hojarasca</figcaption></figure>
-      <figure><img src="assets/g/torta-crema.jpg" alt="Torta de crema decorada" loading="lazy"><figcaption>Crema</figcaption></figure>
-      <figure><img src="assets/g/torta-choco.jpg" alt="Torta de chocolate decorada para el Día de la Madre" loading="lazy"><figcaption>Chocolate</figcaption></figure>
-      <figure><img src="assets/g/torta-trufa.jpg" alt="Torta trufa de chocolate" loading="lazy"><figcaption>Trufa chocolate</figcaption></figure>
-      <figure><img src="assets/g/torta-2.jpg" alt="Torta lista para el postre" loading="lazy"><figcaption>Para hoy</figcaption></figure>
-      <figure><img src="assets/g/torta-1.jpg" alt="Torta decorada en vitrina" loading="lazy"><figcaption>De la vitrina</figcaption></figure>
+      <figure data-c="tema" class="g-a"><img src="assets/g/torta-f1.jpg" alt="Torta temática de Fórmula 1 con nombre Daniel" loading="lazy"><figcaption>Temática Fórmula 1</figcaption></figure>
+      <figure data-c="foto" class="g-b"><img src="assets/g/torta-reina.jpg" alt="Torta de chocolate con foto y topper Feliz Cumpleaños Reina de la casa" loading="lazy"><figcaption>Foto + topper</figcaption></figure>
+      <figure data-c="frase"><img src="assets/g/torta-abuelita.jpg" alt="Torta rosada con mariposas y la frase Feliz Cumple Abuelita" loading="lazy"><figcaption>Feliz cumple, abuelita</figcaption></figure>
+      <figure data-c="foto"><img src="assets/g/torta-mamita.jpg" alt="Torta con foto comestible y la frase Te recordamos Mamita" loading="lazy"><figcaption>Con tu foto</figcaption></figure>
+      <figure data-c="tema" class="g-b"><img src="assets/g/torta-leopardo.jpg" alt="Torta animal print con borde de crema roja" loading="lazy"><figcaption>Animal print</figcaption></figure>
+      <figure data-c="foto"><img src="assets/g/torta-8anos.jpg" alt="Torta rectangular de chocolate con imagen comestible por 8 años" loading="lazy"><figcaption>Imagen comestible</figcaption></figure>
+      <figure data-c="frase"><img src="assets/g/torta-fran.jpg" alt="Torta pequeña con la frase Feliz Cumple Fran, lista en su caja" loading="lazy"><figcaption>Lista para llevar</figcaption></figure>
+      <figure data-c="tema" class="g-b"><img src="assets/g/torta-rosas.jpg" alt="Torta decorada con rosas para el Día de la Madre" loading="lazy"><figcaption>Con flores</figcaption></figure>
+      <figure data-c="foto"><img src="assets/g/torta-foto.jpg" alt="Torta con foto comestible y velas" loading="lazy"><figcaption>Con velas y foto</figcaption></figure>
+      <figure data-c="frase"><img src="assets/g/torta-cumple.jpg" alt="Torta con frase de feliz cumpleaños" loading="lazy"><figcaption>Con tu frase</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-trufa-manjar.jpg" alt="Torta trufa manjar" loading="lazy"><figcaption>Trufa manjar</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-manjar-trozos.jpg" alt="Torta de chocolate con manjar cortada en trozos" loading="lazy"><figcaption>Chocolate y manjar</figcaption></figure>
+      <figure data-c="clasica" class="g-b"><img src="assets/g/torta-crocante.jpg" alt="Torta de chocolate con crocante" loading="lazy"><figcaption>Con crocante</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-frambuesa-choc.jpg" alt="Torta de chocolate con frambuesa" loading="lazy"><figcaption>Chocolate frambuesa</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-moka.jpg" alt="Torta moka cortada en trozos" loading="lazy"><figcaption>Moka</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-merengue.jpg" alt="Torta con merengue y chocolate" loading="lazy"><figcaption>Merengue y chocolate</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-hojarasca.jpg" alt="Torta de hojarasca con manjar" loading="lazy"><figcaption>Hojarasca</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-chocolate.jpg" alt="Torta de chocolate decorada" loading="lazy"><figcaption>Chocolate</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-trufa.jpg" alt="Torta trufa de chocolate" loading="lazy"><figcaption>Trufa chocolate</figcaption></figure>
+      <figure data-c="clasica"><img src="assets/g/torta-crema.jpg" alt="Torta de crema decorada" loading="lazy"><figcaption>Crema</figcaption></figure>
+      <figure data-c="foto"><img src="assets/g/torta-foto-2.jpg" alt="Torta con foto comestible en celebración" loading="lazy"><figcaption>Tu recuerdo</figcaption></figure>
     </div>
     <div class="temas"><span>Personajes</span><span>Temáticas</span><span>Colores</span><span>Hobbies</span><span>Profesiones</span><span>Deportes</span><span>Imagen comestible</span><span>Toppers con nombre</span></div>
   </div>
@@ -332,7 +378,7 @@ footer a{color:var(--rosa)}
     <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-tab="pas">Pastelería</button><button role="tab" aria-selected="false" data-tab="pan">Panadería</button></div>
     <div class="vitrina" data-panel="pas">
       <article class="prod"><img src="assets/g/tartaletas.jpg" alt="Tartaletas de fruta" loading="lazy"><div><b>Tartaletas</b><p>De frutas, individuales y familiares.</p></div></article>
-      <article class="prod"><img src="assets/g/cheesecake.jpg" alt="Cheesecake de frutos del bosque" loading="lazy"><div><b>Cheesecake</b><p>Frutos del bosque, frambuesa, maracuyá, lúcuma o plátano manjar.</p></div></article>
+      <article class="prod"><img src="assets/g/cheesecakes.jpg" alt="Cheesecake de frutos del bosque" loading="lazy"><div><b>Cheesecake</b><p>Frutos del bosque, frambuesa, maracuyá, lúcuma o plátano manjar.</p></div></article>
       <article class="prod"><img src="assets/g/pies.jpg" alt="Pies con merengue italiano" loading="lazy"><div><b>Pies</b><p>Con merengue italiano: limón, maracuyá o frambuesa.</p></div></article>
       <article class="prod"><img src="assets/g/kuchen.jpg" alt="Kuchen y tartas de frutos rojos" loading="lazy"><div><b>Kuchen y tartas</b><p>Variedades que cambian cada día.</p></div></article>
       <article class="prod"><img src="assets/g/tartas-frutos.jpg" alt="Tartas de frutos rojos" loading="lazy"><div><b>Frutos rojos</b><p>Tartas para acompañar el café.</p></div></article>
@@ -349,6 +395,35 @@ footer a{color:var(--rosa)}
       <article class="prod"><img src="assets/g/sopaipillas.jpg" alt="Sopaipillas" loading="lazy"><div><b>Sopaipillas</b><p>Para los días de frío.</p></div></article>
       <article class="prod"><img src="assets/g/roll-canela.jpg" alt="Roll de canela con café" loading="lazy"><div><b>Café + roll</b><p>Café de máquina con un roll de canela.</p></div></article>
       <article class="prod"><img src="assets/g/roll-2.jpg" alt="Roll glaseado" loading="lazy"><div><b>Más masas</b><p>Bretzel, brownie y trenzas.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="cafe" class="cafe">
+  <div class="wrap cafe-g">
+    <figure class="cafe-vid"><video src="assets/g/v-cafe.mp4" poster="assets/g/v-cafe.jpg" muted loop playsinline preload="none" data-auto aria-label="Video de la máquina de café sirviendo un vaso"></video><span class="mano">¡recién servido!</span></figure>
+    <div>
+      <span class="ojo">Café para llevar</span>
+      <h2 class="cafe-h">Un café <em>y algo rico</em>, al paso</h2>
+      <p class="cafe-p">En el local tenemos máquina de café Nescafé: eliges tu preparación en la pantalla y te lo llevas en vaso. Acompáñalo con algo de la vitrina.</p>
+      <div class="combos">
+        <div><img src="assets/g/roll-canela.jpg" alt="Roll de canela" loading="lazy"><b>Café + roll de canela</b><span>El clásico de la mañana</span></div>
+        <div><img src="assets/g/torta-manjar-trozos.jpg" alt="Trozo de torta" loading="lazy"><b>Café + trozo de torta</b><span>Para la once</span></div>
+        <div><img src="assets/g/kuchen.jpg" alt="Kuchen" loading="lazy"><b>Café + kuchen o tarta</b><span>Frutos rojos y más</span></div>
+      </div>
+      <ul class="lista-c"><li>Abierto todos los días desde las 8:00.</li><li>Vaso para llevar, listo en un momento.</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="obrador" class="obrador">
+  <div class="wrap">
+    <div class="cab"><span class="ojo">Detrás del mostrador</span><h2>Así hacemos <em>el pan</em></h2><p>Todos los días amasamos, formamos y horneamos en nuestra propia cuadra. Lo que llega a la vitrina sale de aquí.</p></div>
+    <div class="tira obr">
+      <figure class="reel"><video src="assets/g/v-laminado.mp4" poster="assets/g/v-laminado.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Laminado y formado<small>La masa pasa por la laminadora</small></figcaption></figure>
+      <figure class="reel"><video src="assets/g/v-amasado.mp4" poster="assets/g/v-amasado.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Formado a mano<small>Pieza por pieza</small></figcaption></figure>
+      <figure class="reel"><video src="assets/g/v-horno.mp4" poster="assets/g/v-horno.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Al horno<small>Bandejas listas para hornear</small></figcaption></figure>
+      <figure class="reel"><video src="assets/g/v-cuadra.mp4" poster="assets/g/v-cuadra.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Nuestra cuadra<small>Donde se hace todo</small></figcaption></figure>
     </div>
   </div>
 </section>
@@ -454,13 +529,14 @@ var h='<thead><tr><th>Torta</th>'+T.map(function(t){return'<th>'+t+' p.</th>'}).
 Object.keys(P).forEach(function(k){h+='<tr><td>'+k+'</td>'+P[k].map(function(v){return'<td>'+(v===null?"–":f(v))+'</td>'}).join("")+'</tr>'});
 $("tabla").innerHTML=h+'</tbody>';pinta();
 document.querySelectorAll("[data-tab]").forEach(function(b){b.onclick=function(){document.querySelectorAll("[data-tab]").forEach(function(x){x.setAttribute("aria-selected",x===b?"true":"false")});document.querySelectorAll("[data-panel]").forEach(function(p){p.hidden=p.dataset.panel!==b.dataset.tab})}});
-document.querySelectorAll(".bento img,.prod img").forEach(function(i){i.onclick=function(){var v=document.createElement("div");v.className="visor";v.innerHTML='<img src="'+i.src+'" alt="'+i.alt+'"><button type="button" aria-label="Cerrar">×</button>';v.onclick=function(e){if(e.target!==v.querySelector("img"))v.remove()};document.body.appendChild(v)}});
+document.querySelectorAll("[data-f]").forEach(function(b){b.onclick=function(){var f=b.dataset.f,bn=document.querySelector(".bento");document.querySelectorAll("[data-f]").forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});bn.classList.toggle("filtrado",f!=="todas");bn.querySelectorAll("figure").forEach(function(g){g.hidden=f!=="todas"&&g.dataset.c!==f})}});
+document.querySelectorAll(".bento img,.prod img,.combos img").forEach(function(i){i.onclick=function(){var v=document.createElement("div");v.className="visor";v.innerHTML='<img src="'+i.src+'" alt="'+i.alt+'"><button type="button" aria-label="Cerrar">×</button>';v.onclick=function(e){if(e.target!==v.querySelector("img"))v.remove()};document.body.appendChild(v)}});
 var red=matchMedia("(prefers-reduced-motion: reduce)").matches;
 if("IntersectionObserver"in window&&!red){var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){v.preload="auto";v.play().catch(function(){})}else v.pause()})},{threshold:.4});document.querySelectorAll("video[data-auto]").forEach(function(v){io.observe(v)})}
 })();
 </script>
 <link rel="stylesheet" href="asistente.css">
-<script>window.ASISTENTE={"negocio":"Los Avellanos","persona":"Los Avellanos","wa":"56987037364","boton":"¿Te ayudo a encargar?","saludo":"¡Hola! 👋 Soy el asistente de Los Avellanos. Te ayudo a encargar tu torta o a resolver dudas. ¿Qué buscas?","confirma":"te respondemos","agendar":"Quiero encargar","cuando":[{"t":"Esta semana","m":"La necesito esta semana."},{"t":"Para un cumpleaños","m":"Es para un cumpleaños, le cuento la fecha."},{"t":"Todavía no sé","m":"Aún no tengo fecha definida."}],"servicios":[{"n":"🎂 Torta personalizada","info":"Personajes, temáticas, imagen comestible o la frase que quieras. Desde $22.000 (15 personas) más los detalles.","opts":["Imagen comestible","Topper con nombre","Temática completa"],"kw":"torta|cumple|personaliz|tematic|personaje"},{"n":"🍰 Torta tradicional","info":"16 sabores, de 15 a 60 personas: trufas, hojarascas, tres y cuatro leches, milhojas y más.","opts":["15 personas","20 a 30 personas","Más de 30"],"kw":"sabor|trufa|hojarasca|milhoja|leches|selva"},{"n":"🥖 Panadería y vitrina","info":"Pan del día, rolls, berlines, kuchen, tartaletas, cheesecake y empanadas.","opts":[],"kw":"pan|empanada|berlin|roll|kuchen|tartalet|cheesec|pie"}],"faq":[{"pri":true,"kw":"precio|valor|cuanto|costo|cobra|sale|presupuesto|cotiz","r":"Las tortas van desde $22.000 (15 personas) hasta $88.000 (Milhojas, 60 personas). En el cotizador de la página eliges sabor y tamaño y ves el precio exacto; las decoraciones se suman aparte."},{"kw":"sabor|sabores","r":"Tenemos 16 sabores: Piña Clásica, Durazno, Selva Negra, Sacher, Tres Leches, Cuatro Leches, Panqueque Naranja, Trufa (manjar, frambuesa o chocolate nuez), Hojarasca (manjar, pastelera o frambuesa), Holandesa, Amapola y Milhojas."},{"kw":"donde|direccion|ubicacion|comuna|zona|sector|llegar","r":"Estamos en Av. Paseo Pie Andino 01848, Puente Alto."},{"kw":"horario|hora|abren|atienden|sabado|domingo|noche|cierran","r":"Atendemos de lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00."},{"kw":"redond|rectang|formato|tamano|personas","r":"La de 15 personas es redonda; desde 20 personas es rectangular. La Milhojas parte desde 20 personas."},{"kw":"topper|imagen|lamina|esfera|mariposa|decora|pack","r":"Topper con nombre $2.000, imagen comestible $2.500, lámina con nombre/edad $3.000 y decoración temática desde $4.000. El pack cumpleaños (imagen + topper + detalles) suma $5.000."},{"kw":"hoy|disponible|vitrina|ahora","r":"En la vitrina solemos tener tortas y pasteles para el día. Escríbenos por WhatsApp y te contamos qué hay hoy."},{"kw":"pago|transferencia|efectivo|tarjeta","r":"La forma de pago se coordina directamente por WhatsApp o en el local."}]};</script>
+<script>window.ASISTENTE={"negocio":"Los Avellanos","persona":"Los Avellanos","wa":"56987037364","boton":"¿Te ayudo a encargar?","saludo":"¡Hola! 👋 Soy el asistente de Los Avellanos. Te ayudo a encargar tu torta o a resolver dudas. ¿Qué buscas?","confirma":"te respondemos","agendar":"Quiero encargar","cuando":[{"t":"Esta semana","m":"La necesito esta semana."},{"t":"Para un cumpleaños","m":"Es para un cumpleaños, le cuento la fecha."},{"t":"Todavía no sé","m":"Aún no tengo fecha definida."}],"servicios":[{"n":"🎂 Torta personalizada","info":"Personajes, temáticas, imagen comestible o la frase que quieras. Desde $22.000 (15 personas) más los detalles.","opts":["Imagen comestible","Topper con nombre","Temática completa"],"kw":"torta|cumple|personaliz|tematic|personaje"},{"n":"🍰 Torta tradicional","info":"16 sabores, de 15 a 60 personas: trufas, hojarascas, tres y cuatro leches, milhojas y más.","opts":["15 personas","20 a 30 personas","Más de 30"],"kw":"sabor|trufa|hojarasca|milhoja|leches|selva"},{"n":"🥖 Panadería y vitrina","info":"Pan del día, rolls, berlines, kuchen, tartaletas, cheesecake y empanadas.","opts":[],"kw":"pan|empanada|berlin|roll|kuchen|tartalet|cheesec|pie"},{"n":"☕ Café para llevar","info":"Tenemos máquina de café Nescafé en el local: eliges tu preparación y te lo llevas en vaso. Acompáñalo con un roll de canela, un trozo de torta o un kuchen.","opts":[],"kw":"cafe|capuccino|cappuccino|latte|mokaccino|vaso"}],"faq":[{"pri":true,"kw":"precio|valor|cuanto|costo|cobra|sale|presupuesto|cotiz","r":"Las tortas van desde $22.000 (15 personas) hasta $88.000 (Milhojas, 60 personas). En el cotizador de la página eliges sabor y tamaño y ves el precio exacto; las decoraciones se suman aparte."},{"kw":"sabor|sabores","r":"Tenemos 16 sabores: Piña Clásica, Durazno, Selva Negra, Sacher, Tres Leches, Cuatro Leches, Panqueque Naranja, Trufa (manjar, frambuesa o chocolate nuez), Hojarasca (manjar, pastelera o frambuesa), Holandesa, Amapola y Milhojas."},{"kw":"donde|direccion|ubicacion|comuna|zona|sector|llegar","r":"Estamos en Av. Paseo Pie Andino 01848, Puente Alto."},{"kw":"horario|hora|abren|atienden|sabado|domingo|noche|cierran","r":"Atendemos de lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00."},{"kw":"redond|rectang|formato|tamano|personas","r":"La de 15 personas es redonda; desde 20 personas es rectangular. La Milhojas parte desde 20 personas."},{"kw":"topper|imagen|lamina|esfera|mariposa|decora|pack","r":"Topper con nombre $2.000, imagen comestible $2.500, lámina con nombre/edad $3.000 y decoración temática desde $4.000. El pack cumpleaños (imagen + topper + detalles) suma $5.000."},{"kw":"cafe|capuccino|cappuccino|latte|expreso|espresso","r":"Sí, vendemos café: tenemos máquina Nescafé en el local, de lunes a sábado de 8:00 a 21:30 y domingo de 8:00 a 21:00. Te lo llevas en vaso, con un roll o un trozo de torta si quieres."},{"kw":"hoy|disponible|vitrina|ahora","r":"En la vitrina solemos tener tortas y pasteles para el día. Escríbenos por WhatsApp y te contamos qué hay hoy."},{"kw":"pago|transferencia|efectivo|tarjeta","r":"La forma de pago se coordina directamente por WhatsApp o en el local."}]};</script>
 <script src="asistente.js" defer></script>
 </body>
 </html>
