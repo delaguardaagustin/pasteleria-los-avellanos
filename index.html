@@ -285,6 +285,31 @@ footer a{color:var(--rosa)}
 .asis-form input{border:1.5px solid var(--linea)!important;border-radius:999px!important;padding:10px 16px!important}
 .asis-form button{background:var(--rosa-o)!important}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+/* ===== más diseño (12-11) ===== */
+.cot:before,.cot:after,.pasos:before,.pasos:after{content:"";position:absolute;left:0;right:0;height:16px;background-repeat:repeat-x;background-size:24px 16px;z-index:2;pointer-events:none}
+.cot:before{top:-15px;background-image:radial-gradient(circle at 12px 16px,var(--cafe2) 11px,transparent 11.5px)}
+.cot:after{bottom:-15px;background-image:radial-gradient(circle at 12px 0,var(--cafe2) 11px,transparent 11.5px)}
+.pasos{background:var(--rosa2)}
+.pasos:before{top:-15px;background-image:radial-gradient(circle at 12px 16px,var(--rosa2) 11px,transparent 11.5px)}
+.pasos:after{bottom:-15px;background-image:radial-gradient(circle at 12px 0,var(--rosa2) 11px,transparent 11.5px)}
+.pasos-g{display:grid;gap:18px;margin-top:34px;counter-reset:p}
+@media(min-width:860px){.pasos-g{grid-template-columns:repeat(4,1fr)}}
+.paso-c{background:#fff;border-radius:var(--r);padding:26px 22px 24px;position:relative;box-shadow:0 18px 40px -28px rgba(58,36,28,.45);transition:transform .3s ease,box-shadow .3s ease}
+.paso-c:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 26px 50px -28px rgba(58,36,28,.55)}
+.paso-c .num{counter-increment:p;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--cafe2);color:#fff;font-family:Fraunces,serif;font-size:21px;margin-bottom:16px}
+.paso-c .num:before{content:counter(p)}
+.paso-c h3{font-size:22px;color:var(--cafe2);margin-bottom:8px}
+.paso-c p{color:var(--gris);font-size:15px}
+.paso-c .mano{position:absolute;right:18px;top:20px;font-size:22px;transform:rotate(-6deg)}
+.dias{display:flex;gap:6px;margin-top:14px}
+.dias span{flex:1;text-align:center;font-size:12px;font-weight:600;padding:7px 4px;border-radius:10px;background:var(--crema2);color:var(--cafe)}
+.dias span b{display:block;font-family:Fraunces,serif;font-size:16px;color:var(--rosa-o)}
+.bento figure{transition:transform .35s ease,box-shadow .35s ease}
+.bento figure:hover{transform:translateY(-3px);box-shadow:0 22px 40px -26px rgba(58,36,28,.6)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.paso-c,.bento figure{transition:none}}
 </style>
 </head>
 <body>
@@ -332,7 +357,6 @@ footer a{color:var(--rosa)}
       <figure class="reel"><span class="vivo">● Postres</span><video src="assets/g/v-postres.mp4" poster="assets/g/v-postres.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Frutos rojos<small>Tartas y cheesecake</small></figcaption></figure>
       <figure class="reel"><span class="vivo">● Panadería</span><video src="assets/g/v-pan.mp4" poster="assets/g/v-pan.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Pan de todos los días<small>Marraqueta, hallulla y ciabatta</small></figcaption></figure>
       <figure class="reel"><span class="vivo">● Masas dulces</span><video src="assets/g/v-rico.mp4" poster="assets/g/v-rico.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Lo rico de hoy<small>Masas dulces recién horneadas</small></figcaption></figure>
-      <figure class="reel"><span class="vivo">● El local</span><video src="assets/g/v-local.mp4" poster="assets/g/v-local.jpg" muted loop playsinline preload="none" data-auto></video><figcaption>Nuestra vitrina<small>Local remodelado en Paseo Pie Andino</small></figcaption></figure>
     </div>
   </div>
 </section>
@@ -387,6 +411,18 @@ footer a{color:var(--rosa)}
       </aside>
     </div>
     <details class="tabla"><summary>Ver lista completa de precios</summary><div class="scroll"><table id="tabla"></table></div></details>
+  </div>
+</section>
+
+<section id="encargar" class="pasos">
+  <div class="wrap">
+    <div class="cab"><span class="ojo">Cómo encargar</span><h2>Tu torta, <em>en cuatro pasos</em></h2><p>Así funciona un encargo en Los Avellanos, de la idea al retiro.</p></div>
+    <div class="pasos-g">
+      <article class="paso-c"><span class="num"></span><span class="mano">¡fácil!</span><h3>Elige y cotiza</h3><p>Arma tu torta en el cotizador: sabor, tamaño y decoración. Ves el precio al tiro.</p></article>
+      <article class="paso-c"><span class="num"></span><h3>Confirma con abono</h3><p>Pídela por WhatsApp o en el local y confirma con un abono del 50 %. El resto se paga al retirar.</p></article>
+      <article class="paso-c"><span class="num"></span><h3>La hacemos en 3 días</h3><p>Por eso se encarga con al menos 3 días de anticipación.</p><div class="dias"><span><b>1</b>bizcocho</span><span><b>2</b>relleno</span><span><b>3</b>decoración</span></div></article>
+      <article class="paso-c"><span class="num"></span><h3>Retira o te la llevamos</h3><p>Retiro en el local. Pedidos sobre $30.000 se despachan en La Florida y Puente Alto por $2.000.</p></article>
+    </div>
   </div>
 </section>
 
@@ -449,7 +485,7 @@ footer a{color:var(--rosa)}
 <section id="nosotros" class="equipo">
   <div class="wrap eq">
     <div class="eq-fotos">
-      <video class="alta" src="assets/g/v-local.mp4" poster="assets/g/v-local.jpg" muted loop playsinline preload="none" data-auto aria-label="Video del local"></video>
+      <video class="alta" src="assets/g/v-vitrina.mp4" poster="assets/g/v-vitrina.jpg" muted loop playsinline preload="none" data-auto aria-label="Video de la vitrina del local"></video>
       <img src="assets/g/equipo.jpg" alt="Equipo de Los Avellanos con una torta" loading="lazy">
       <img src="assets/g/vitrina.jpg" alt="Vitrina con pasteles" loading="lazy">
     </div>
@@ -572,6 +608,16 @@ if(v==="si")return cargar();if(v==="no")return;
 var d=document.createElement("div");d.className="galleta";d.setAttribute("role","dialog");d.setAttribute("aria-label","Aviso de cookies");
 d.innerHTML='<p>Usamos cookies de Google Analytics solo para saber cuántas personas visitan la página. Puedes aceptarlas o rechazarlas. <a href="privacidad.html">Más información</a>.</p><div><button type="button" class="btn btn-cafe" data-r="si">Aceptar</button><button type="button" class="btn btn-ln" data-r="no">Rechazar</button></div>';
 d.onclick=function(e){var r=e.target.dataset&&e.target.dataset.r;if(!r)return;guardar(r);d.remove();if(r==="si")cargar()};document.body.appendChild(d)})();
+</script>
+<script>
+(function(){
+  var sel=".cab,.bento figure,.reel,.prod,.op,.paso-c,.combos>div,.eq-fotos,.cot-grid";
+  var els=document.querySelectorAll(sel);
+  if(!("IntersectionObserver" in window)) return;
+  els.forEach(function(el){ el.classList.add("rv"); });
+  var io=new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ var el=e.target, sib=el.parentElement?[].indexOf.call(el.parentElement.children,el):0; el.style.transitionDelay=Math.min(sib%4,3)*70+"ms"; el.classList.add("in"); io.unobserve(el);} }); },{rootMargin:"0px 0px -6% 0px"});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
