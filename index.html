@@ -178,6 +178,19 @@ tbody tr:hover td{background:rgba(255,255,255,.05)}
 .prod b{font-family:Fraunces,serif;font-size:19px;color:var(--cafe2);display:block}
 .prod p{font-size:13.5px;color:var(--gris);margin-top:4px}
 [hidden]{display:none!important}
+/* sabores: torta completa + su trozo */
+.sab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:22px}
+.sab{background:#fff;border:1px solid var(--linea);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.sab-f{position:relative;margin:0;aspect-ratio:4/3;background:var(--crema2)}
+.sab-f>img{width:100%;height:100%;object-fit:cover;display:block}
+.sab-in{position:absolute;right:12px;bottom:12px;width:44%;margin:0;border-radius:16px;overflow:hidden;border:4px solid #fff;box-shadow:0 8px 22px rgba(43,29,23,.28);background:#fff}
+.sab-in img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.sab-in figcaption{font-size:11.5px;font-weight:600;text-align:center;color:var(--rosa-o);padding:3px 0 4px;letter-spacing:.02em}
+.sab-tag{position:absolute;left:12px;top:12px;background:rgba(255,255,255,.92);color:var(--cafe2);font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px}
+.sab-b{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.sab-b h3{margin:0;font-size:21px;color:var(--cafe2)}
+.sab-b p{margin:0;color:var(--gris);font-size:14px}
+.sab-b .btn{margin-top:auto;align-self:flex-start;padding:10px 16px;font-size:14px}
 /* filtros tortas */
 .filtros{display:flex;flex-wrap:wrap;gap:8px;margin:-6px 0 22px}
 .filtros button{padding:9px 16px;border-radius:999px;border:1.5px solid var(--linea);background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--cafe);cursor:pointer}
@@ -315,7 +328,7 @@ footer a{color:var(--rosa)}
 <body>
 <header class="top"><div class="wrap">
   <a class="marca" href="#"><img src="assets/logo.jpg" alt="Logo Los Avellanos"><div><b>Los Avellanos</b><small>Panadería &amp; Pastelería</small></div></a>
-  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#cotiza">Cotiza</a><a href="#vitrina">Vitrina</a><a href="#cafe">Café</a><a href="#nosotros">Nosotros</a><a href="#visitanos">Visítanos</a></nav>
+  <nav class="nav" aria-label="Secciones"><a href="#tortas">Tortas</a><a href="#sabores-fotos">Sabores</a><a href="#cotiza">Cotiza</a><a href="#vitrina">Vitrina</a><a href="#cafe">Café</a><a href="#nosotros">Nosotros</a><a href="#visitanos">Visítanos</a></nav>
   <a class="btn btn-wa" href="https://wa.me/56987037364?text=Hola%20Los%20Avellanos%2C%20vi%20su%20p%C3%A1gina%20web." target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
 </div></header>
 
@@ -389,6 +402,13 @@ footer a{color:var(--rosa)}
       <figure data-c="foto"><img src="assets/g/torta-foto-2.jpg" alt="Torta con foto comestible en celebración" loading="lazy"><figcaption>Tu recuerdo</figcaption></figure>
     </div>
     <div class="temas"><span>Personajes</span><span>Temáticas</span><span>Colores</span><span>Hobbies</span><span>Profesiones</span><span>Deportes</span><span>Imagen comestible</span><span>Toppers con nombre</span></div>
+  </div>
+</section>
+
+<section id="sabores-fotos">
+  <div class="wrap">
+    <div class="cab"><span class="ojo">Nuestros sabores</span><h2>Mira la torta <em>y cómo es por dentro</em></h2><p>Cada sabor con la torta completa y su trozo, para que sepas cómo se ve y qué lleva antes de encargar.</p></div>
+    <div class="sab-grid" id="sab-grid"></div>
   </div>
 </section>
 
@@ -595,6 +615,21 @@ if("IntersectionObserver"in window&&!red){var io=new IntersectionObserver(functi
 })();
 </script>
 <link rel="stylesheet" href="asistente.css">
+<script>
+(function(){
+var S=[["Amapola lúcuma","amapola-torta","amapola-trozo","Amapola"],["Panqueque naranja","naranja-torta","naranja-trozo","Panqueque Naranja"],["Panqueque naranja chocolate","naranja-choc-torta","naranja-choc-trozo",null],["Trufa nuez","trufa-nuez-torta","trufa-nuez-trozo","Trufa Chocolate Nuez"],["Sacher",null,"sacher-trozo","Sacher"],["Hojarasca manjar pastelera",null,"hoja-pastelera-trozo","Hojarasca Manjar Pastelera"],["Hojarasca berries",null,"hoja-berries-trozo",null],["Bon bon chocolate frambuesa",null,"bonbon-trozo",null],["Manjar lúcuma",null,"manjar-lucuma-trozo",null],["Trufa chocolate","trufa-choc-torta",null,null],["Lúcuma nuez","lucuma-nuez-torta",null,null],["Helada frambuesa","helada-frambuesa-torta",null,null],["Helada berries","helada-berries-torta",null,null],["Piña","pina-torta",null,"Piña Clásica"],["Durazno","durazno-torta",null,"Durazno"]];
+var g=document.getElementById("sab-grid");if(!g)return;
+g.innerHTML=S.map(function(x){var n=x[0],t=x[1],z=x[2],k=x[3];
+ var img=t?'<img src="assets/sabores/'+t+'.webp" alt="Torta '+n+' completa" loading="lazy">':'<img src="assets/sabores/'+z+'.webp" alt="Trozo de '+n+'" loading="lazy">';
+ var ins=(t&&z)?'<figure class="sab-in"><img src="assets/sabores/'+z+'.webp" alt="Trozo de '+n+' por dentro" loading="lazy"><figcaption>así es por dentro</figcaption></figure>':'<span class="sab-tag">'+(t?'La torta':'Por dentro')+'</span>';
+ var wa="https://wa.me/56987037364?text="+encodeURIComponent("Hola Los Avellanos, vi su página y quiero consultar por la torta "+n+".");
+ var btn=k?'<button type="button" class="btn btn-cafe" data-k="'+k+'">Cotizar este sabor</button>':'<a class="btn btn-ln" href="'+wa+'" target="_blank" rel="noopener">Consultar por WhatsApp</a>';
+ return '<article class="sab"><figure class="sab-f">'+img+ins+'</figure><div class="sab-b"><h3>'+n+'</h3>'+btn+'</div></article>';}).join("");
+g.addEventListener("click",function(e){var b=e.target.closest("button[data-k]");if(!b)return;var k=b.getAttribute("data-k");
+ var o=[].slice.call(document.querySelectorAll("#sabores button")).filter(function(x){return x.textContent===k})[0];if(o)o.click();
+ var c=document.getElementById("cotiza");if(c)c.scrollIntoView({behavior:"smooth"});});
+})();
+</script>
 <script>window.ASISTENTE={"negocio":"Los Avellanos","persona":"Los Avellanos","wa":"56987037364","boton":"¿Te ayudo a encargar?","saludo":"¡Hola! 👋 Soy el asistente de Los Avellanos. Te ayudo a encargar tu torta o a resolver dudas. ¿Qué buscas?","confirma":"te respondemos","agendar":"Quiero encargar","cuando":[{"t":"Esta semana","m":"La necesito esta semana."},{"t":"Para un cumpleaños","m":"Es para un cumpleaños, le cuento la fecha."},{"t":"Todavía no sé","m":"Aún no tengo fecha definida."}],"servicios":[{"n":"🎂 Torta personalizada","info":"Personajes, temáticas, imagen comestible o la frase que quieras. Desde $22.000 (15 personas) más los detalles.","opts":["Imagen comestible","Topper con nombre","Temática completa"],"kw":"torta|cumple|personaliz|tematic|personaje"},{"n":"🍰 Torta tradicional","info":"16 sabores, de 15 a 60 personas: trufas, hojarascas, tres y cuatro leches, milhojas y más.","opts":["15 personas","20 a 30 personas","Más de 30"],"kw":"sabor|trufa|hojarasca|milhoja|leches|selva"},{"n":"🥖 Panadería y vitrina","info":"Pan del día, rolls, berlines, kuchen, tartaletas, cheesecake y empanadas.","opts":[],"kw":"pan|empanada|napolitana|berlin|roll|kuchen|tartalet|cheesec|pie"},{"n":"☕ Café para llevar","info":"Tenemos máquina de café Nescafé en el local: eliges tu preparación y te lo llevas en vaso. Acompáñalo con un roll de canela, un trozo de torta o un kuchen.","opts":[],"kw":"cafe|capuccino|cappuccino|latte|mokaccino|vaso"}],"faq":[{"pri":true,"kw":"cancel|retract|devol|reembols","r":"La torta se hace en 3 días: bizcocho, relleno y decoración. Si cancelas antes de que empecemos, te devolvemos el abono; si cancelas cuando ya está hecho el bizcocho (3 días antes de la entrega), te devolvemos el 25 % del abono; desde 2 días antes ya no hay devolución."},{"pri":true,"kw":"anticip|cuantos dias|con cuanto tiempo|plazo","r":"Las tortas por encargo se piden con al menos 3 días de anticipación."},{"pri":true,"kw":"abono|reserva|adelanto|confirmar","r":"El encargo se confirma con un abono del 50 %; el resto se paga al retirar. Si lo pagas por transferencia, escríbenos por WhatsApp y te enviamos los datos."},{"pri":true,"kw":"despacho|delivery|envio|domicilio|reparto","r":"Despachamos pedidos superiores a $30.000 dentro de La Florida y Puente Alto, con un cobro adicional de $2.000."},{"pri":true,"kw":"cambiar|cambio","r":"Puedes cambiar el sabor siempre que tengamos en stock lo que necesita el cambio; tu abono se respeta y se descuenta del total. Si no retiras la torta, la guardamos 1 día más; después se pierde el abono."},{"pri":true,"kw":"sin azucar|diabet|alerg","r":"Hacemos tortas sin azúcar, con menos sabores que la carta habitual. Si tienes alguna alergia, avísanos al encargar."},{"pri":true,"kw":"factura|boleta|incluye iva|con iva","r":"Los precios incluyen IVA. Entregamos boleta y también factura si la necesitas."},{"pri":true,"kw":"cuanto dura|duracion|refriger|conserv","r":"Mantén la torta refrigerada: así dura hasta 7 días."},{"pri":true,"kw":"precio|valor|cuanto|costo|cobra|sale|presupuesto|cotiz","r":"Las tortas van desde $22.000 (15 personas) hasta $88.000 (Milhojas, 60 personas). En el cotizador de la página eliges sabor y tamaño y ves el precio exacto; las decoraciones se suman aparte."},{"kw":"sabor|sabores","r":"Tenemos 16 sabores: Piña Clásica, Durazno, Selva Negra, Sacher, Tres Leches, Cuatro Leches, Panqueque Naranja, Trufa (manjar, frambuesa o chocolate nuez), Hojarasca (manjar, pastelera o frambuesa), Holandesa, Amapola y Milhojas."},{"kw":"donde|direccion|ubicacion|comuna|zona|sector|llegar","r":"Estamos en Av. Paseo Pie Andino 01848, Puente Alto."},{"kw":"horario|hora|abren|atienden|sabado|domingo|noche|cierran","r":"Atendemos de lunes a sábado de 8:00 a 21:30, y domingo de 8:00 a 21:00."},{"kw":"redond|rectang|formato|tamano|personas","r":"La de 15 personas es redonda; desde 20 personas es rectangular. La Milhojas parte desde 20 personas."},{"kw":"topper|imagen|lamina|esfera|mariposa|decora|pack","r":"Topper con nombre $2.000, imagen comestible $2.500, lámina con nombre/edad $3.000 y decoración temática desde $4.000. El pack cumpleaños (imagen + topper + detalles) suma $5.000."},{"kw":"cafe|capuccino|cappuccino|latte|expreso|espresso","r":"Sí, vendemos café: tenemos máquina Nescafé en el local, de lunes a sábado de 8:00 a 21:30 y domingo de 8:00 a 21:00. Te lo llevas en vaso, con un roll o un trozo de torta si quieres."},{"kw":"hoy|disponible|vitrina|ahora","r":"En la vitrina solemos tener tortas y pasteles para el día. Escríbenos por WhatsApp y te contamos qué hay hoy."},{"kw":"pago|pagar|transfer|cuenta|deposit|efectivo|tarjeta","r":"Puedes pagar en el local o por transferencia: escríbenos por WhatsApp y te enviamos los datos para transferir."}]};</script>
 <script src="asistente.js" defer></script>
 <script>
